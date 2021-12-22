@@ -193,7 +193,93 @@ public class AccountDAO {
 				
 	}
 
-	
+public static void updateAccount(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "update account set a_pw=?, a_contact=?, a_addr=? where a_id=?";
+		
+		try {
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			// 수정가능한 파라미터만 받아오기
+			String id =request.getParameter("id");
+			String pw = request.getParameter("pw");
+			String pw2 = request.getParameter("pw2");
+			System.out.println("--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+			System.out.println(id);
+			System.out.println(pw);
+			System.out.println(pw2);
+				// 연락처 값3개 받아서 하나로 만들기(기존 값)
+			String num1 = request.getParameter("num1");
+			String num2 = request.getParameter("num2");
+			String num3 = request.getParameter("num3");
+			String contact = num1 + "-" + num2 + "-" + num3;
+			System.out.println(contact);
+				// 연락처 값3개 받아서 하나로 만들기(업데이트 값)
+			String num11 = request.getParameter("num11");
+			String num22 = request.getParameter("num22");
+			String num33 = request.getParameter("num33");
+			String contact2 = num11 + "-" + num22 + "-" + num33;
+			System.out.println(contact2);
+				// 주소 값3개 받아서 하나로 만들기(기존 값)
+			String  postAddr1= request.getParameter("postAddr1");
+			String  postAddr2= request.getParameter("postAddr2");
+			String  postAddr3= request.getParameter("postAddr3");
+			String addr = postAddr1+"_"+postAddr2+"_"+postAddr3;
+			System.out.println(addr);
+			// 주소 값3개 받아서 하나로 만들기(업데이트 값)
+			String  postAddr11= request.getParameter("postAddr1");
+			String  postAddr22= request.getParameter("postAddr2");
+			String  postAddr33= request.getParameter("postAddr3");
+			String addr2 = postAddr11+"_"+postAddr22+"_"+postAddr33;
+			System.out.println(addr2);
+			// 기존값과 업데이트값 중 넣기
+				// 패스워드
+			String pw3 = "";
+			if(pw2.length() == 0) {
+				pw3 = pw;
+			}else {
+				pw3 = pw2;
+			}
+				// 전화번호
+			String contact3 = "";
+			if(contact2.length() == 2) {
+				contact3 = contact;
+			}else {
+				contact3 = contact2;
+			}
+				// 주소
+			String addr3 = "";
+			if(addr2.length() == 0) {
+				addr3 = addr;
+			}else {
+				addr3 = addr2;
+			}
+			
+			// sql문 자리에 각 값 배치
+			pstmt.setString(1, pw3);
+			pstmt.setString(2, contact3);
+			pstmt.setString(3, addr3);
+			pstmt.setString(4, id);
+			
+			if (pstmt.executeUpdate() == 1) {
+				request.setAttribute("r", "수정 성공!");
+			} else {
+				request.setAttribute("r", "수정 실패 ...");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("DB 서버 문제...");
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+	}
 		
 	
 
