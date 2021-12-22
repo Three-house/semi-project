@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>3ÆÀ ºÎµ¿»ê»çÀÌÆ®</title>
+<meta charset="UTF-8">
+<title>Every House</title>
 <link href="img/icon/home.png" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/signup.css">
@@ -14,19 +14,19 @@
 	<table class="indexTbl">
 	<tr id="indexTr1"> 
 		<td width="700px">
-			<img src="img/icon/home.png" width="70px" height="60px">
+			<img src="img/icon/home.png" width="70px" height="60px" onclick="location.href='HC'" style="cursor: pointer;">
 		</td>
 		<td>
-			<jsp:include page="${login}"></jsp:include>
+			<jsp:include page="${loginPage}"></jsp:include>
 		</td> 
 	</tr>
 	<tr id="indexTr2"> 
 		<td colspan="2">
-			<div id="menu1">Áöµµ</div>
-			<div id="menu2">Ä¿¹Â´ÏÆ¼</div>
-			<div id="menu3">¸Å¹°</div>
-			<div id="menu4">Áß°³º¸¼ö °è»ê</div>
-			<div id="menu5">³ªÀÇ °ü½É¸Å¹°</div>
+			<div id="menu1">ì§€ë„</div>
+			<div id="menu2">ì»¤ë®¤ë‹ˆí‹°</div>
+			<div id="menu3">ë§¤ë¬¼</div>
+			<div id="menu4">ì¤‘ê°œë³´ìˆ˜ ê³„ì‚°</div>
+			<div id="menu5">ë‚˜ì˜ ê´€ì‹¬ë§¤ë¬¼</div>
 			<div id="menuLine"></div>
 		</td> 
 	</tr>

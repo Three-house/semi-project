@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>홈</h1>
+<a onclick="location.href='LoginInfo'" style="cursor: pointer;"> >>>로그인 하기</a>
 </body>
 </html>

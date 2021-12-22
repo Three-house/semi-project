@@ -1,4 +1,4 @@
-package com.tr.account;
+package com.tr.log;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/LoginC")
-public class LoginC extends HttpServlet {
+@WebServlet("/LoginInfo")
+public class LoginInfo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("login", "jsp/loginA.jsp");
+		request.setAttribute("loginPage", "jsp/loginInfo.jsp");
 		request.setAttribute("contentPage", "jsp/login.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

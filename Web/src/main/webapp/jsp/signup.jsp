@@ -1,45 +1,47 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+</head>
+<body>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
-    //º» ¿¹Á¦¿¡¼­´Â µµ·Î¸í ÁÖ¼Ò Ç¥±â ¹æ½Ä¿¡ ´ëÇÑ ¹ı·É¿¡ µû¶ó, ³»·Á¿À´Â µ¥ÀÌÅÍ¸¦ Á¶ÇÕÇÏ¿© ¿Ã¹Ù¸¥ ÁÖ¼Ò¸¦ ±¸¼ºÇÏ´Â ¹æ¹ıÀ» ¼³¸íÇÕ´Ï´Ù.
+    //ë³¸ ì˜ˆì œì—ì„œëŠ” ë„ë¡œëª… ì£¼ì†Œ í‘œê¸° ë°©ì‹ì— ëŒ€í•œ ë²•ë ¹ì— ë”°ë¼, ë‚´ë ¤ì˜¤ëŠ” ë°ì´í„°ë¥¼ ì¡°í•©í•˜ì—¬ ì˜¬ë°”ë¥¸ ì£¼ì†Œë¥¼ êµ¬ì„±í•˜ëŠ” ë°©ë²•ì„ ì„¤ëª…í•©ë‹ˆë‹¤.
     function sample4_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
-                // ÆË¾÷¿¡¼­ °Ë»ö°á°ú Ç×¸ñÀ» Å¬¸¯ÇßÀ»¶§ ½ÇÇàÇÒ ÄÚµå¸¦ ÀÛ¼ºÇÏ´Â ºÎºĞ.
+                // íŒì—…ì—ì„œ ê²€ìƒ‰ê²°ê³¼ í•­ëª©ì„ í´ë¦­í–ˆì„ë•Œ ì‹¤í–‰í•  ì½”ë“œë¥¼ ì‘ì„±í•˜ëŠ” ë¶€ë¶„.
 
-                // µµ·Î¸í ÁÖ¼ÒÀÇ ³ëÃâ ±ÔÄ¢¿¡ µû¶ó ÁÖ¼Ò¸¦ Ç¥½ÃÇÑ´Ù.
-                // ³»·Á¿À´Â º¯¼ö°¡ °ªÀÌ ¾ø´Â °æ¿ì¿£ °ø¹é('')°ªÀ» °¡Áö¹Ç·Î, ÀÌ¸¦ Âü°íÇÏ¿© ºĞ±â ÇÑ´Ù.
-                var roadAddr = data.roadAddress; // µµ·Î¸í ÁÖ¼Ò º¯¼ö
-                var extraRoadAddr = ''; // Âü°í Ç×¸ñ º¯¼ö
+                // ë„ë¡œëª… ì£¼ì†Œì˜ ë…¸ì¶œ ê·œì¹™ì— ë”°ë¼ ì£¼ì†Œë¥¼ í‘œì‹œí•œë‹¤.
+                // ë‚´ë ¤ì˜¤ëŠ” ë³€ìˆ˜ê°€ ê°’ì´ ì—†ëŠ” ê²½ìš°ì—” ê³µë°±('')ê°’ì„ ê°€ì§€ë¯€ë¡œ, ì´ë¥¼ ì°¸ê³ í•˜ì—¬ ë¶„ê¸° í•œë‹¤.
+                var roadAddr = data.roadAddress; // ë„ë¡œëª… ì£¼ì†Œ ë³€ìˆ˜
+                var extraRoadAddr = ''; // ì°¸ê³  í•­ëª© ë³€ìˆ˜
 
-                // ¹ıÁ¤µ¿¸íÀÌ ÀÖÀ» °æ¿ì Ãß°¡ÇÑ´Ù. (¹ıÁ¤¸®´Â Á¦¿Ü)
-                // ¹ıÁ¤µ¿ÀÇ °æ¿ì ¸¶Áö¸· ¹®ÀÚ°¡ "µ¿/·Î/°¡"·Î ³¡³­´Ù.
-                if(data.bname !== '' && /[µ¿|·Î|°¡]$/g.test(data.bname)){
+                // ë²•ì •ë™ëª…ì´ ìˆì„ ê²½ìš° ì¶”ê°€í•œë‹¤. (ë²•ì •ë¦¬ëŠ” ì œì™¸)
+                // ë²•ì •ë™ì˜ ê²½ìš° ë§ˆì§€ë§‰ ë¬¸ìê°€ "ë™/ë¡œ/ê°€"ë¡œ ëë‚œë‹¤.
+                if(data.bname !== '' && /[ë™|ë¡œ|ê°€]$/g.test(data.bname)){
                     extraRoadAddr += data.bname;
                 }
-                // °Ç¹°¸íÀÌ ÀÖ°í, °øµ¿ÁÖÅÃÀÏ °æ¿ì Ãß°¡ÇÑ´Ù.
+                // ê±´ë¬¼ëª…ì´ ìˆê³ , ê³µë™ì£¼íƒì¼ ê²½ìš° ì¶”ê°€í•œë‹¤.
                 if(data.buildingName !== '' && data.apartment === 'Y'){
                    extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                 }
-                // Ç¥½ÃÇÒ Âü°íÇ×¸ñÀÌ ÀÖÀ» °æ¿ì, °ıÈ£±îÁö Ãß°¡ÇÑ ÃÖÁ¾ ¹®ÀÚ¿­À» ¸¸µç´Ù.
+                // í‘œì‹œí•  ì°¸ê³ í•­ëª©ì´ ìˆì„ ê²½ìš°, ê´„í˜¸ê¹Œì§€ ì¶”ê°€í•œ ìµœì¢… ë¬¸ìì—´ì„ ë§Œë“ ë‹¤.
                 if(extraRoadAddr !== ''){
                     extraRoadAddr = ' (' + extraRoadAddr + ')';
                 }
 
-                // ¿ìÆí¹øÈ£¿Í ÁÖ¼Ò Á¤º¸¸¦ ÇØ´ç ÇÊµå¿¡ ³Ö´Â´Ù.
+                // ìš°í¸ë²ˆí˜¸ì™€ ì£¼ì†Œ ì •ë³´ë¥¼ í•´ë‹¹ í•„ë“œì— ë„£ëŠ”ë‹¤.
                 document.getElementById('sample4_postcode').value = data.zonecode;
                 document.getElementById("sample4_roadAddress").value = roadAddr;
                 document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
          
                 document.getElementById("sample4_engAddress").value = data.addressEnglish;
                        
-                // Âü°íÇ×¸ñ ¹®ÀÚ¿­ÀÌ ÀÖÀ» °æ¿ì ÇØ´ç ÇÊµå¿¡ ³Ö´Â´Ù.
+                // ì°¸ê³ í•­ëª© ë¬¸ìì—´ì´ ìˆì„ ê²½ìš° í•´ë‹¹ í•„ë“œì— ë„£ëŠ”ë‹¤.
                 if(roadAddr !== ''){
                     document.getElementById("sample4_extraAddress").value = extraRoadAddr;
                 } else {
@@ -47,15 +49,15 @@
                 }
 
                 var guideTextBox = document.getElementById("guide");
-                // »ç¿ëÀÚ°¡ '¼±ÅÃ ¾ÈÇÔ'À» Å¬¸¯ÇÑ °æ¿ì, ¿¹»ó ÁÖ¼Ò¶ó´Â Ç¥½Ã¸¦ ÇØÁØ´Ù.
+                // ì‚¬ìš©ìê°€ 'ì„ íƒ ì•ˆí•¨'ì„ í´ë¦­í•œ ê²½ìš°, ì˜ˆìƒ ì£¼ì†Œë¼ëŠ” í‘œì‹œë¥¼ í•´ì¤€ë‹¤.
                 if(data.autoRoadAddress) {
                     var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-                    guideTextBox.innerHTML = '(¿¹»ó µµ·Î¸í ÁÖ¼Ò : ' + expRoadAddr + ')';
+                    guideTextBox.innerHTML = '(ì˜ˆìƒ ë„ë¡œëª… ì£¼ì†Œ : ' + expRoadAddr + ')';
                     guideTextBox.style.display = 'block';
 
                 } else if(data.autoJibunAddress) {
                     var expJibunAddr = data.autoJibunAddress;
-                    guideTextBox.innerHTML = '(¿¹»ó Áö¹ø ÁÖ¼Ò : ' + expJibunAddr + ')';
+                    guideTextBox.innerHTML = '(ì˜ˆìƒ ì§€ë²ˆ ì£¼ì†Œ : ' + expJibunAddr + ')';
                     guideTextBox.style.display = 'block';
                 } else {
                     guideTextBox.innerHTML = '';
@@ -67,10 +69,10 @@
 </script>
 </head>
 <body>
-<form action="SignUpC">
+<form action="RegAccountC" onsubmit="return check()" name="myForm">
 	<table class="signupTbl">	
 	<tr>
-	 <td colspan="2"> <h1>&nbsp;&nbsp;È¸¿ø°¡ÀÔ</h1> 
+	 <td colspan="2"> <h1>&nbsp;&nbsp;íšŒì›ê°€ì…</h1> 
 	 	  <div id="signupHead"></div>
 	 </td>
 	</tr>
@@ -78,62 +80,53 @@
 		<td colspan="2" style="color: white;">-----------</td>
 	</tr>
 	<tr>
-		<td>&nbsp;&nbsp;ÀÌ ¸§</td>
-		<td><input name="name"></td>
+		<td>&nbsp;&nbsp;ì´ ë¦„</td>
+		<td><input name="name" required="required"></td>
 	</tr>
 	<tr>
 		<td> &nbsp;&nbsp;ID</td>
-		<td><input name="id"></td>
+		<td><input name="id" placeholder="í•œê¸€ ì™¸ 5ê¸€ì ì´ìƒ"></td>
 	</tr>
 	<tr>
 		<td>&nbsp;&nbsp;PW</td>
-		<td><input name="pw"></td>
+		<td><input name="pw" type="password" placeholder="3ê¸€ì ì´ìƒ, ëŒ€,ì†Œ,ìˆ« 1í¬í•¨"></td>
 	</tr>
 	<tr>
-		<td>&nbsp;&nbsp;PW È®ÀÎ</td>
-		<td><input name="pw"></td>
+		<td>&nbsp;&nbsp;PW í™•ì¸</td>
+		<td><input name="pw" type="password"></td>
 	</tr>
 	<tr>
-	<td>&nbsp;&nbsp;¼ºº°</td>
+	<td>&nbsp;&nbsp;ì„±ë³„</td>
 	 <td>
-	 	¿© <input type="checkbox" name="sex"> 
-	 	³² <input type="checkbox" name="sex"> 	 
+		ë‚¨<input type="radio" name="gender" checked="checked" value="ë‚¨">
+		ì—¬<input type="radio" name="gender" value="ì—¬"> 
 	 </td>
 	</tr>
 	<tr>
 		<td colspan="2" style="color: white;">-----------</td>
 	</tr>
 	<tr>
-	 <td>&nbsp;&nbsp;ÀüÈ­¹øÈ£</td>
-	 <td> <input name="num1" size="3">-<input name="num2" size="5">-<input name="num3" size="5"> </td>
+	 <td>&nbsp;&nbsp;ì „í™”ë²ˆí˜¸</td>
+	 <td> <input name="num1" size="3" value="010">-<input name="num2" size="5">-<input name="num3" size="5"> </td>
 	</tr>
 	<tr>
 		<td colspan="2" style="color: white;">-----------</td>
 	</tr>
 	<tr>
-	 <td colspan="2"> &nbsp;&nbsp;ÁÖ¼Ò <p>
-	 	<input type="text" id="sample4_postcode" placeholder="¿ìÆí¹øÈ£">
-		<input type="button" onclick="sample4_execDaumPostcode()" value="¿ìÆí¹øÈ£ Ã£±â"><br>
-		<input type="text" id="sample4_roadAddress" placeholder="µµ·Î¸íÁÖ¼Ò" size="60" ><br>
-		<input type="hidden" id="sample4_jibunAddress" placeholder="Áö¹øÁÖ¼Ò"  size="60">
+	 <td colspan="2"> &nbsp;&nbsp;ì£¼ì†Œ <p>
+	 	<input type="text" id="sample4_postcode" placeholder="ìš°í¸ë²ˆí˜¸" name="postAddr1">
+		<input type="button" onclick="sample4_execDaumPostcode()" value="ìš°í¸ë²ˆí˜¸ ì°¾ê¸°"><br>
+		<input type="text" id="sample4_roadAddress" placeholder="ë„ë¡œëª…ì£¼ì†Œ" size="60" name="postAddr2"><br>
+		<input type="hidden" id="sample4_jibunAddress" placeholder="ì§€ë²ˆì£¼ì†Œ"  size="60">
 		<span id="guide" style="color:#999;display:none"></span>
-		<input type="text" id="sample4_detailAddress" placeholder="»ó¼¼ÁÖ¼Ò"  size="60"><br>
-		<input type="hidden" id="sample4_extraAddress" placeholder="Âü°íÇ×¸ñ"  size="60">
-		<input type="hidden" id="sample4_engAddress" placeholder="¿µ¹®ÁÖ¼Ò"  size="60" ><br>
-<!-- 
-String  addr1= multi.getParameter("postAddr1");
-String  addr2= multi.getParameter("postAddr2");
-String  addr3= multi.getParameter("postAddr3");
-String addr = addr1+" "+addr2+" "+addr3;
- -->		
+		<input type="text" id="sample4_detailAddress" placeholder="ìƒì„¸ì£¼ì†Œ"  size="60" name="postAddr3"><br>
+		<input type="hidden" id="sample4_extraAddress" placeholder="ì°¸ê³ í•­ëª©"  size="60">
+		<input type="hidden" id="sample4_engAddress" placeholder="ì˜ë¬¸ì£¼ì†Œ"  size="60" ><br>	
 	 </td>
 	</tr>
 	<tr id="signupTr12">
 	 <td colspan="2"> 
-		  <div id="button-1">
-    		<div id="eff-1"></div>
-    		<a href="#"> °¡ÀÔÇÏ±â </a>
-  		 </div>
+		<button>ê°€ì…í•˜ê¸°</button>
 	 </td>
 	</tr>	
 	</table>

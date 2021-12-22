@@ -1,12 +1,13 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
 body {
-	margin: auto;
+	margin: 0;
+	padding: 0;
 }
 
 #indexHeadDiv {
 	height: 7px;
-	width: 1519px;
+	width: 100%;
 	background: #EDEDED;
 }
 

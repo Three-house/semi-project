@@ -1,15 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<form action="LoginC" method="post">
 	<table class="signupTbl" style="margin-bottom: 500px">	
 	<tr>
-	 <td colspan="2"> <h1>&nbsp;&nbsp;·Î±×ÀÎ</h1> 
+	 <td colspan="2"> <h1>&nbsp;&nbsp;ë¡œê·¸ì¸</h1> 
 	 	  <div id="signupHead"></div>
 	 </td>
 	</tr>
@@ -25,20 +26,15 @@
 		<td><input name="pw"></td>
 	</tr>
 	<tr>
-		<td colspan="2" style="color: white;">-----------</td>
+		<td colspan="2" style="color: white; height: 60px;">-----------</td>
 	</tr>
 	<tr id="signupTr12">
 	 <td colspan="2"> 
-		  <div id="button-1">
-    		<div id="eff-1"></div>
-    		<a href="SignUpC"> °¡ÀÔÇÏ±â </a>
-  		 </div>
- 		  <div id="button-1">
-    		<div id="eff-1"></div>
-    		<a href="#"> ·Î±×ÀÎ </a>
-  		 </div>
+		<button>ë¡œê·¸ì¸</button>
+		<button type="button" onclick="location.href='SignUpC'">íšŒì›ê°€ì…</button>
 	 </td>
 	</tr>	
 	</table>
+</form>
 </body>
 </html>

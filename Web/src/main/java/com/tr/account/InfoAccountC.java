@@ -1,4 +1,4 @@
-package com.tr.main;
+package com.tr.account;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/HC")
-public class HC extends HttpServlet {
+import com.tr.log.AccountDAO;
+
+@WebServlet("/InfoAccountC")
+public class InfoAccountC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("loginPage", "jsp/loginInfo.jsp");
-		request.setAttribute("contentPage", "jsp/home.jsp");
+		AccountDAO.logincheck(request);
+		request.setAttribute("contentPage", "jsp/mypage.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
