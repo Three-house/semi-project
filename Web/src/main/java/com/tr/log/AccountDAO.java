@@ -27,11 +27,7 @@ public class AccountDAO {
 		
 	}
 
-	public static void login(HttpServletRequest request) throws UnsupportedEncodingException {
-		
-		request.setCharacterEncoding("utf-8");
-		String userid = request.getParameter("id");
-		String userpw = request.getParameter("pw");
+	public static void login(HttpServletRequest request) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -40,6 +36,10 @@ public class AccountDAO {
 		String sql = "select * from account where a_id = ?";
 		
 		try {
+			request.setCharacterEncoding("utf-8");
+			String userid = request.getParameter("id");
+			String userpw = request.getParameter("pw");
+			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userid);
@@ -72,7 +72,20 @@ public class AccountDAO {
 					a.setNum1(num1);
 					a.setNum2(num2);
 					a.setNum3(num3);
-					
+					// 주소 잘라서 넣기
+					String addr = rs.getString("a_addr");
+					String postAddr1 = addr.split("_")[0];
+					String postAddr2 = addr.split("_")[1];
+					String postAddr3 = addr.split("_")[2];
+						// 자른 주소 확인하기
+					System.out.println(postAddr1);
+					System.out.println(postAddr2);
+					System.out.println(postAddr3);
+						// 자른 주소 객체 필드에 세팅하기
+					a.setPostAddr1(postAddr1);
+					a.setPostAddr2(postAddr2);
+					a.setPostAddr3(postAddr3);
+					// 세션, 셋어트리뷰트로 포장
 					HttpSession hs = request.getSession();
 					hs.setAttribute("accountInfo", a);
 					hs.setMaxInactiveInterval(180);
@@ -120,10 +133,10 @@ public class AccountDAO {
 			String num3 = request.getParameter("num3");
 			String contact = num1 + "-" + num2 + "-" + num3;
 				// 주소 값3개 받아서 하나로 만들기
-			String  addr1= request.getParameter("postAddr1");
-			String  addr2= request.getParameter("postAddr2");
-			String  addr3= request.getParameter("postAddr3");
-			String addr = addr1+" "+addr2+" "+addr3;
+			String  postAddr1= request.getParameter("postAddr1");
+			String  postAddr2= request.getParameter("postAddr2");
+			String  postAddr3= request.getParameter("postAddr3");
+			String addr = postAddr1+"_"+postAddr2+"_"+postAddr3;
 			// 값 확인해보기
 			System.out.println(name);
 			System.out.println(id);
@@ -153,5 +166,35 @@ public class AccountDAO {
 		}
 		
 	}
+
+	public static void deleteAccount(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		String sql = "delete account where a_id = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			String id = request.getParameter("id");
+			pstmt.setString(1, id);
+
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("탈퇴 성공!");
+			} 
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("DB 서버 문제...");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+				
+	}
+
+	
+		
+	
 
 }

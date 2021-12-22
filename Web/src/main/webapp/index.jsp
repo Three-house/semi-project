@@ -8,6 +8,7 @@
 <link href="img/icon/home.png" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/signup.css">
+<script type="text/javascript" src="js/go.js"></script>
 </head>
 <body>
 	<div id="indexHeadDiv"></div>
