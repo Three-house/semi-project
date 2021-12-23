@@ -9,4 +9,6 @@ a_addr varchar2 (100 char) not null
 
 insert into account values ('sr','id','pw','ø©','0101234567','¡÷º“');
 
+delete from account where a_id = 'sr';
+
 select * from account;

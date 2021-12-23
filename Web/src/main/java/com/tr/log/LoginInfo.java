@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginInfo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("loginPage", "jsp/loginInfo.jsp");
+		AccountDAO.logincheck(request);
 		request.setAttribute("contentPage", "jsp/login.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

@@ -39,6 +39,9 @@ public class AccountDAO {
 			request.setCharacterEncoding("utf-8");
 			String userid = request.getParameter("id");
 			String userpw = request.getParameter("pw");
+			System.out.println("--*-*-*-*-*-*-*-*-*LOGIN-*-*-*-*-*-*-*-*-*");
+			System.out.println(userid);
+			System.out.println(userpw);
 			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
@@ -138,6 +141,7 @@ public class AccountDAO {
 			String  postAddr3= request.getParameter("postAddr3");
 			String addr = postAddr1+"_"+postAddr2+"_"+postAddr3;
 			// 값 확인해보기
+			System.out.println("--*-*-*-*-*-*-*-*-*CREATE-*-*-*-*-*-*-*-*-*");
 			System.out.println(name);
 			System.out.println(id);
 			System.out.println(pw);
@@ -209,7 +213,7 @@ public static void updateAccount(HttpServletRequest request) {
 			String id =request.getParameter("id");
 			String pw = request.getParameter("pw");
 			String pw2 = request.getParameter("pw2");
-			System.out.println("--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+			System.out.println("--*-*-*-*-*-*-*-*-*UPDATE-*-*-*-*-*-*-*-*-*");
 			System.out.println(id);
 			System.out.println(pw);
 			System.out.println(pw2);
@@ -232,9 +236,9 @@ public static void updateAccount(HttpServletRequest request) {
 			String addr = postAddr1+"_"+postAddr2+"_"+postAddr3;
 			System.out.println(addr);
 			// 주소 값3개 받아서 하나로 만들기(업데이트 값)
-			String  postAddr11= request.getParameter("postAddr1");
-			String  postAddr22= request.getParameter("postAddr2");
-			String  postAddr33= request.getParameter("postAddr3");
+			String  postAddr11= request.getParameter("postAddr11");
+			String  postAddr22= request.getParameter("postAddr22");
+			String  postAddr33= request.getParameter("postAddr33");
 			String addr2 = postAddr11+"_"+postAddr22+"_"+postAddr33;
 			System.out.println(addr2);
 			// 기존값과 업데이트값 중 넣기
@@ -254,7 +258,7 @@ public static void updateAccount(HttpServletRequest request) {
 			}
 				// 주소
 			String addr3 = "";
-			if(addr2.length() == 0) {
+			if(addr2.length() == 2) {
 				addr3 = addr;
 			}else {
 				addr3 = addr2;
@@ -267,9 +271,9 @@ public static void updateAccount(HttpServletRequest request) {
 			pstmt.setString(4, id);
 			
 			if (pstmt.executeUpdate() == 1) {
-				request.setAttribute("r", "수정 성공!");
+				System.out.println("수정 성공!");
 			} else {
-				request.setAttribute("r", "수정 실패 ...");
+				System.out.println("수정 실패 ...");
 			}
 			
 		} catch (Exception e) {

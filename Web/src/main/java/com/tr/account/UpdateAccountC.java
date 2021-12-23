@@ -14,7 +14,7 @@ public class UpdateAccountC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 내 정보 수정 페이지에서 작동 수행
-		//AccountDAO.updateAccount(request);
+		AccountDAO.updateAccount(request);
 		AccountDAO.login(request);
 		AccountDAO.logincheck(request);
 		request.setAttribute("contentPage", "jsp/home.jsp");
