@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="UpdateAccountC">
+<form action="UpdateAccountC" onsubmit="return check()" name="myForm">
 	<table class="signupTbl">	
 	<tr>
 	 <td colspan="2"> <h1>&nbsp;&nbsp;내 정보 수정</h1> 

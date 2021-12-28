@@ -249,14 +249,14 @@ public static void updateAccount(HttpServletRequest request) {
 			}else {
 				pw3 = pw2;
 			}
-				// 전화번호
+				// 전화번호('--'가 있음으로 2)
 			String contact3 = "";
 			if(contact2.length() == 2) {
 				contact3 = contact;
 			}else {
 				contact3 = contact2;
 			}
-				// 주소
+				// 주소('__'가 있음으로 2)
 			String addr3 = "";
 			if(addr2.length() == 2) {
 				addr3 = addr;

@@ -93,7 +93,7 @@
 	</tr>
 	<tr>
 		<td>&nbsp;&nbsp;PW 확인</td>
-		<td><input name="pw" type="password"></td>
+		<td><input name="pww" type="password"></td>
 	</tr>
 	<tr>
 	<td>&nbsp;&nbsp;성별</td>
