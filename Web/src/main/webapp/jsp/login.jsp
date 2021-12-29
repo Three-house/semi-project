@@ -31,7 +31,7 @@
 	<tr id="signupTr12">
 	 <td></td>
 	 <td> 
-		<button>로그인</button>
+		<button style="margin-left:190px">로그인</button>
 		<button type="button" onclick="location.href='SignUpC'" >회원가입</button>
 	 </td>
 	</tr>	

@@ -285,6 +285,35 @@ public static void updateAccount(HttpServletRequest request) {
 		
 	}
 		
-	
+	public static void checkId(HttpServletRequest request) {
+		
+		String id = request.getParameter("idinput");
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select a_id from account where a_id=?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				request.setAttribute("r", "이미 등록된 ID 입니다.");
+			}else {
+				request.setAttribute("r", "사용가능한 ID 입니다");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("DB 서버문제 ...");
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+	}
 
 }

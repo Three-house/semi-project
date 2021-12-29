@@ -55,7 +55,7 @@
 	<tr id="signupTr12">
 	<td></td>
 	 <td> 
-		<button>수정하기</button>
+		<button style="margin-left:150px">수정하기</button>
 		<button type="button" onclick="deleteAccount('${sessionScope.accountInfo.id}')">탈퇴하기</button>
 	 </td>
 	</tr>	

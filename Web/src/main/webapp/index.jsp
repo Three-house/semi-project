@@ -18,7 +18,7 @@
 	<table class="indexTbl" >
 	<tr id="indexTr1"> 
 		<td width="700px">
-			<img src="img/icon/home.png" width="70px" height="60px" onclick="location.href='HC'" style="cursor: pointer;">
+			<img src="img/icon/everyhouse2.png" width="260px" height="60px" onclick="location.href='HC'" style="cursor: pointer;">
 		</td>
 		<td>
 			<jsp:include page="${loginPage}"></jsp:include>

@@ -85,11 +85,16 @@
 	</tr>
 	<tr>
 		<td> &nbsp;&nbsp;ID</td>
-		<td><input name="id" id="id" placeholder="한글 외 5글자 이상"></td>
+		<td style="font-size: 7px">
+		<input name="id" id="id" onkeydown="inputIdchk()"> *한글 외 5글자 이상
+		<button type="button" onclick="openIdchk()">중복확인</button>
+		<input type="hidden" name="idDuplication" value="idUncheck">
+		</td>
 	</tr>
 	<tr>
 		<td>&nbsp;&nbsp;PW</td>
-		<td><input name="pw" id="pw" type="password" placeholder="3글자 이상, 대,소,숫 1포함"></td>
+		<td style="font-size: 7px"><input name="pw" id="pw" type="password"> 
+		*3글자 이상, 대문자 소문자 숫자 중 1포함</td>
 	</tr>
 	<tr>
 		<td>&nbsp;&nbsp;PW 확인</td>
@@ -114,19 +119,19 @@
 	</tr>
 	<tr>
 	 <td colspan="2"> &nbsp;&nbsp;주소 <p>
-	 	<input type="text" id="sample4_postcode" placeholder="우편번호" name="postAddr1" id="postAddr1">
+	 	<input type="text" id="sample4_postcode" placeholder="우편번호" name="postAddr1" id="postAddr1" required="required">
 		<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-		<input type="text" id="sample4_roadAddress" placeholder="도로명주소" size="60" name="postAddr2" id="postAddr2"><br>
+		<input type="text" id="sample4_roadAddress" placeholder="도로명주소" size="60" name="postAddr2" id="postAddr2" required="required"><br>
 		<input type="hidden" id="sample4_jibunAddress" placeholder="지번주소"  size="60">
 		<span id="guide" style="color:#999;display:none"></span>
-		<input type="text" id="sample4_detailAddress" placeholder="상세주소"  size="60" name="postAddr3" id="postAddr3"><br>
+		<input type="text" id="sample4_detailAddress" placeholder="상세주소"  size="60" name="postAddr3" id="postAddr3" required="required"><br>
 		<input type="hidden" id="sample4_extraAddress" placeholder="참고항목"  size="60">
 		<input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" ><br>	
 	 </td>
 	</tr>
 	<tr id="signupTr12">
 	 <td colspan="2"> 
-		<button>가입하기</button>
+		<button style="margin-left:350px">가입하기</button>
 	 </td>
 	</tr>	
 	</table>
