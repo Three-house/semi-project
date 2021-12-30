@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.communityTbl {
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom: 400px;
+	text-align: center;
+}
+
+.communityTbl
+#tbl_community_head {
+	margin-left:auto;
+	margin-right:auto;
+	width: 600px;
+}
+
+.communityTbl
+#tbl_community {
+	margin-left:auto;
+	margin-right:auto;
+	width: 600px;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+.communityTbl
+#tbl_community_such {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 20px;
+}
+
+#com_head_div{
+	text-align:center;
+	width:580px;
+	height:2px;
+	border-radius:0px;
+	background: black;
+}

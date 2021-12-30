@@ -1,3 +1,4 @@
+<%@page import="com.tr.log.Account"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,6 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+HttpSession hs = request.getSession();
+Account a = (Account) hs.getAttribute("accountInfo");
+String id = a.getId();
+%>
 	<h2 style = "font-family: 'Jua', sans-serif" align = "center">글 등록하기</h2>
 	<hr>
 	
@@ -18,7 +24,7 @@
 			</tr>
 			<tr>
 				<td>아이디</td>
-				<td><input name = "userId"></td>
+				<td><input name = "userId" value="<%=id%>"></td>
 			</tr>
 			<tr>
 				<td colspan = "2" align = "left">내용</td>

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/signup.css">
 <link rel="stylesheet" href="css/mypage.css">
+<link rel="stylesheet" href="css/community.css">
 <script type="text/javascript" src="js/validCheck.js"></script>
 <script type="text/javascript" src="js/go.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
@@ -18,7 +19,7 @@
 </head>
 <body>
 	<div id="indexHeadDiv"></div>
-	<table class="indexTbl" >
+	<table class="indexTbl">
 	<tr id="indexTr1"> 
 		<td width="700px">
 			<img src="img/icon/everyhouse2.png" width="260px" height="75px" onclick="location.href='HC'" style="cursor: pointer;">
