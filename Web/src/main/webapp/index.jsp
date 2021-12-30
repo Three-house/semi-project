@@ -9,16 +9,19 @@
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/signup.css">
 <link rel="stylesheet" href="css/mypage.css">
+<script type="text/javascript" src="js/validCheck.js"></script>
 <script type="text/javascript" src="js/go.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
-<script type="text/javascript" src="js/validCheck.js"></script>
+<script type="text/javascript" src="js/tradeCheck.js"></script>
+<script type="text/javascript" src="js/comments.js"></script>
+<script type="text/javascript" src="js/community.js"></script>
 </head>
 <body>
 	<div id="indexHeadDiv"></div>
 	<table class="indexTbl" >
 	<tr id="indexTr1"> 
 		<td width="700px">
-			<img src="img/icon/everyhouse2.png" width="260px" height="60px" onclick="location.href='HC'" style="cursor: pointer;">
+			<img src="img/icon/everyhouse2.png" width="260px" height="75px" onclick="location.href='HC'" style="cursor: pointer;">
 		</td>
 		<td>
 			<jsp:include page="${loginPage}"></jsp:include>
@@ -26,10 +29,10 @@
 	</tr>
 	<tr id="indexTr2"> 
 		<td colspan="2">
-			<div id="menu1">지도</div>
-			<div id="menu2">커뮤니티</div>
+			<div id="menu1"> <a onclick="location.href='MapC'"style="cursor: pointer">지도</a> </div>
+			<div id="menu2"> <a onclick="location.href='ComC'"style="cursor: pointer">커뮤니티</a> </div>
 			<div id="menu3">매물</div>
-			<div id="menu4">중개보수 계산</div>
+			<div id="menu4"> <a onclick="location.href='CalmainC'"style="cursor: pointer">중개보수 계산</a> </div>
 			<div id="menu5">나의 관심매물</div>
 			<div id="menuLine"></div>
 		</td> 

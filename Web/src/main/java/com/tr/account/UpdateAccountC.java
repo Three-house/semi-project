@@ -17,7 +17,7 @@ public class UpdateAccountC extends HttpServlet {
 		AccountDAO.updateAccount(request);
 		AccountDAO.login(request);
 		AccountDAO.logincheck(request);
-		request.setAttribute("contentPage", "jsp/home.jsp");
+		request.setAttribute("contentPage", "loginJSP/home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
@@ -25,7 +25,7 @@ public class UpdateAccountC extends HttpServlet {
 		
 		// 내 정보 페이지에서 수정하기 버튼 누르면 이동
 		AccountDAO.logincheck(request);
-		request.setAttribute("contentPage", "jsp/updateMypage.jsp");
+		request.setAttribute("contentPage", "loginJSP/updateMypage.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

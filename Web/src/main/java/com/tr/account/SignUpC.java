@@ -15,7 +15,7 @@ public class SignUpC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 회원가입 컨텐트페이지로 가기
 		AccountDAO.logincheck(request);
-		request.setAttribute("contentPage", "jsp/signup.jsp");
+		request.setAttribute("contentPage", "loginJSP/signup.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

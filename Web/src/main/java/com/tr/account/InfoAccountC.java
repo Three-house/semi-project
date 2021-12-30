@@ -14,7 +14,7 @@ public class InfoAccountC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.logincheck(request);
-		request.setAttribute("contentPage", "jsp/mypage.jsp");
+		request.setAttribute("contentPage", "loginJSP/mypage.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

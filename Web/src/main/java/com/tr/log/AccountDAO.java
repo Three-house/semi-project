@@ -19,10 +19,10 @@ public class AccountDAO {
 
 		if (a == null) {	
 			// 로그인 실패
-			request.setAttribute("loginPage", "jsp/loginInfo.jsp");
+			request.setAttribute("loginPage", "loginJSP/loginInfo.jsp");
 		} else {
 			// 로그인 성공
-			request.setAttribute("loginPage", "jsp/loginOK.jsp");
+			request.setAttribute("loginPage", "loginJSP/loginOK.jsp");
 		}
 		
 	}

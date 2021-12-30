@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 public class HC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("loginPage", "jsp/loginInfo.jsp");
-		request.setAttribute("contentPage", "jsp/home.jsp");
+		request.setAttribute("loginPage", "loginJSP/loginInfo.jsp");
+		request.setAttribute("contentPage", "loginJSP/home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

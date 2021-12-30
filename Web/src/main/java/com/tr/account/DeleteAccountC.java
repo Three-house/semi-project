@@ -16,7 +16,7 @@ public class DeleteAccountC extends HttpServlet {
 		AccountDAO.deleteAccount(request);
 		AccountDAO.loginOut(request);
 		AccountDAO.logincheck(request);
-		request.setAttribute("contentPage", "jsp/home.jsp");
+		request.setAttribute("contentPage", "loginJSP/home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

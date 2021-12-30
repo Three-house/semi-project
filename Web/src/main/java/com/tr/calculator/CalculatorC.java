@@ -1,4 +1,4 @@
-package com.tr.account;
+package com.tr.calculator;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,17 +9,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.tr.log.AccountDAO;
 
-@WebServlet("/RegAccountC")
-public class RegAccountC extends HttpServlet {
-       
+@WebServlet("/CalculatorC")
+public class CalculatorC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 회원가입 페이지에서 '가입하기 버튼' 동작하는 곳
-		AccountDAO.reg(request);
+	
 		AccountDAO.logincheck(request);
-		request.setAttribute("contentPage", "loginJSP/signupOK.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		if (request.getParameter("deal_sort").equals("매매")) {
+			Calculator.calc_trade(request);
+			}else if(request.getParameter("deal_sort").equals("전세")||request.getParameter("deal_sort").equals("월세")) {
+				Calculator.calc_jm(request);
+			}
+		
+	request.setAttribute("contentPage", "calculatorJSP/calc_result.jsp");
+	request.getRequestDispatcher("index.jsp").forward(request, response);
+	
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
