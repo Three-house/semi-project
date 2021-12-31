@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.calculatorTbl {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 600px;
+	text-align: center;
+	
+}
+
+.calculatorTbl
+#tbl_calculator_head{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.calculatorTbl
+#tbl_calculator_cal {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:30px;;
+	height: 200px;
+	width:400px;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+	
+}

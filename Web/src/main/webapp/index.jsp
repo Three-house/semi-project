@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/signup.css">
 <link rel="stylesheet" href="css/mypage.css">
 <link rel="stylesheet" href="css/community.css">
+<link rel="stylesheet" href="css/calculator.css">
 <script type="text/javascript" src="js/validCheck.js"></script>
 <script type="text/javascript" src="js/go.js"></script>
 <script type="text/javascript" src="js/check.js"></script>

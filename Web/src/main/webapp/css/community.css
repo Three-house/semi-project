@@ -37,3 +37,55 @@
 	border-radius:0px;
 	background: black;
 }
+
+/*커뮤니티 글보기 페이지*/
+.community_writeTbl{
+	width: 750px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:350px;
+	text-align: center;
+}
+
+.community_writeTbl
+#tbl_community_write_head {
+	width: 730px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#com_write_head_div {
+	text-align:center;
+	width:700px;
+	height:2px;
+	border-radius:0px;
+	background: black;
+}
+
+.community_writeTbl
+#tbl_comDetail {
+	margin-left:auto;
+	margin-right:auto;	
+	width: 650px;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+.community_writeTbl
+#tbl_com_comment {
+	margin-top:30px;
+	margin-left:auto;
+	margin-right:auto;	
+	width: 700px;
+}
+
+/*커뮤니티 글쓰기 페이지*/
+.community_writeTbl
+#tbl_comReg {
+	margin-top:30px;
+	margin-left:auto;
+	margin-right:auto;
+	width: 650px;	
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+}

@@ -13,39 +13,51 @@ HttpSession hs = request.getSession();
 Account a = (Account) hs.getAttribute("accountInfo");
 String id = a.getId();
 %>
-	<h2 style = "font-family: 'Jua', sans-serif" align = "center">글 등록하기</h2>
-	<hr>
-	
+<table class="community_writeTbl">
+<tr>
+<td>
+<h2 style = "font-family: 'Jua', sans-serif" align = "center">글 등록하기</h2>
+<div id="com_write_head_div"></div>
+</td>
+</tr>
+<tr>
+<td>
 	<form action = "ComRegC" method = "post" enctype = "multipart/form-data">
 		<table border = 1 id = "tbl_comReg">
 			<tr>
-				<td>제목</td>
+				<td style="background-color: #F5F5F5">제목</td>
 				<td><input name = "title" required="required"></td>
 			</tr>
 			<tr>
-				<td>아이디</td>
+				<td style="background-color: #F5F5F5">아이디</td>
 				<td><input name = "userId" value="<%=id%>"></td>
 			</tr>
 			<tr>
-				<td colspan = "2" align = "left">내용</td>
+				<td colspan = "2" style="background-color: #F5F5F5">내용</td>
 			</tr>
 			<tr>
-				<td colspan = "2">
+				<td colspan = "2" height="100px;">
 					<textarea name = "content" required="required"></textarea>
 				</td>
 			</tr>
-			<tr> 
-				<td>파일</td>
+			<tr height="40px;"> 
+				<td style="background-color: #F5F5F5">파일</td>
 				<td><input type = "file" name = "file"></td>
 			</tr>
 		</table>
-					<p>
+					<p align="right">
 					<button>등록하기</button>
+					</p>
 	</form>
-	
+</td>
+</tr>
+<tr>
+<td>
 	 <p align = "right">
 	 <button onclick = "history.back()">목록보기</button>
 	 </p>
-	
+</td>
+</tr>
+</table>
 </body>
 </html>
