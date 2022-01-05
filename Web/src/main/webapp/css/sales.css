@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+.salesTbl{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 300px;
+	width: 800px;
+}
+
+.salesTbl
+#tbl_sales_head{
+	width: 800px;
+}
+
+#sales_head_div{
+	width: 800px;
+	height:2px;
+	text-align: center;
+	background-color: black;
+	border-radius: 0px;
+	
+	
+}
+
+.salesTbl
+#tbl_salesSuch{
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+.salesTbl
+#tbl_salesview{
+	margin-top:60px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+#salesviewImg {
+	cursor: pointer;
+	width: 25px;
+	margin-left: 126px;
+}
+/*매물 등록 페이지*/
+.regsalesTbl{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 300px;
+	width: 800px;
+}
+
+#regsales_head_div{
+	width: 800px;
+	height:2px;
+	text-align: center;
+	background-color: black;
+	border-radius: 0px;
+}
+
+.regsalesTbl
+#tbl_regsales_head{
+}
+
+.regsalesTbl
+#tbl_salesReg{
+	margin-top:30px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+    width: 500px;
+    height: 570px;
+}
+
+#regsalesTbl_td {
+	background-color: #F5F5F5; 
+	text-align: center;
+	font-weight: 500;
+}
+
+.regsalesTbl
+#tbl_regsales_button{
+	width: 500px;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: right;
+}
+
+/*매물 등록 페이지*/
+.detailsalesTbl{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 550px;
+	width: 800px;
+}
+
+#detailsales_head_div{
+	width: 800px;
+	height:2px;
+	text-align: center;
+	background-color: black;
+	border-radius: 0px;
+}
+
+.detailsalesTbl
+#tbl_detailsalesview{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:30px;
+	width:500px;
+	height: 100px;	
+}
+
+.detailsalesTbl
+#tbl_detailsaleimg{
+	margin-top:10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px;
+	height: 900px;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+#detailsales_img {
+	margin-left: 425px;
+	cursor: pointer;
+}
+

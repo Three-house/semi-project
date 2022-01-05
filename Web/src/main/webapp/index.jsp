@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/mypage.css">
 <link rel="stylesheet" href="css/community.css">
 <link rel="stylesheet" href="css/calculator.css">
+<link rel="stylesheet" href="css/sales.css">
 <script type="text/javascript" src="js/validCheck.js"></script>
 <script type="text/javascript" src="js/go.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
@@ -33,7 +34,7 @@
 		<td colspan="2">
 			<div id="menu1"> <a onclick="location.href='MapC'"style="cursor: pointer">지도</a> </div>
 			<div id="menu2"> <a onclick="location.href='ComC'"style="cursor: pointer">커뮤니티</a> </div>
-			<div id="menu3">매물</div>
+			<div id="menu3"> <a onclick="location.href='salesC'" style="cursor: pointer">매물</a> </div>
 			<div id="menu4"> <a onclick="location.href='CalmainC'"style="cursor: pointer">중개보수 계산</a> </div>
 			<div id="menu5">나의 관심매물</div>
 			<div id="menuLine"></div>
