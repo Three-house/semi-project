@@ -37,7 +37,7 @@ public class SalesDAO {
 				String name = rs.getString("s_name");
 				String salesort = rs.getString("s_salesort");
 				String location = rs.getString("s_location");
-				double size = rs.getDouble("s_size");
+				String size = rs.getString("s_size");
 				String condition = rs.getString("s_condition");
 				String price = rs.getString("s_price");
 				Date date = rs.getDate("s_date");
@@ -90,8 +90,8 @@ public class SalesDAO {
 				
 				String name = rs.getString("s_name");
 				String salesort = rs.getString("s_salesort");
-				String location = rs.getString("s_lacotion");
-				double size = rs.getDouble("s_size");
+				String location = rs.getString("s_location");
+				String size = rs.getString("s_size");
 				String condition = rs.getString("s_condition");
 				String price = rs.getString("s_price");
 				Date date = rs.getDate("s_date");
@@ -207,7 +207,7 @@ public class SalesDAO {
 		
 			Connection con = null;
 			PreparedStatement pstmt = null;
-			String sql = "insert into sales values (sales_seq.nextval,?,?,?,?,?,sysdate,?,?,?,?,?);";
+			String sql = "insert into sales values (sales_seq.nextval,?,?,?,?,?,?,sysdate,?,?,?,?,?)";
 			
 		try {
 			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
@@ -219,20 +219,33 @@ public class SalesDAO {
 			String file1 = mr.getFilesystemName("img1");
 			String file2 = mr.getFilesystemName("img2");
 			String file3 = mr.getFilesystemName("img3");
+			System.out.println("--------매물내놓기 값");
+			System.out.println(mr.getParameter("buildingName"));
+			System.out.println(mr.getParameter("salesort"));
+			System.out.println(mr.getParameter("location"));
+			System.out.println(mr.getParameter("size"));
+			System.out.println(mr.getParameter("condition"));
+			System.out.println(mr.getParameter("price"));
+			System.out.println(mr.getParameter("etc"));
+			System.out.println(file1);
+			System.out.println(file2);
+			System.out.println(file3);
+			System.out.println(mr.getParameter("contact"));
 		
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setString(1,mr.getParameter("buildingName"));
 			pstmt.setString(2,mr.getParameter("salesort"));
-			pstmt.setString(3,mr.getParameter("size"));
-			pstmt.setString(4,mr.getParameter("condition"));
-			pstmt.setString(5,mr.getParameter("price"));
-			pstmt.setString(6,mr.getParameter("etc"));
-			pstmt.setString(7,file1);
-			pstmt.setString(8,file2);
-			pstmt.setString(9,file3);
-			pstmt.setString(10,mr.getParameter("contact"));
+			pstmt.setString(3, mr.getParameter("location"));
+			pstmt.setString(4,mr.getParameter("size"));
+			pstmt.setString(5,mr.getParameter("condition"));
+			pstmt.setString(6,mr.getParameter("price"));
+			pstmt.setString(7,mr.getParameter("etc"));
+			pstmt.setString(8,file1);
+			pstmt.setString(9,file2);
+			pstmt.setString(10,file3);
+			pstmt.setString(11,mr.getParameter("contact"));
 			
 			
 			if (pstmt.executeUpdate() == 1) {

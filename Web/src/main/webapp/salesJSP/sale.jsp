@@ -75,14 +75,14 @@
 							<td>
 								<table border="1" id="tbl_salesview">
 									<tr>
-										<td width="200px;"><img src="img/sales/${s.img1}">
+										<td width="200px;"><img src="salesimg/${s.img1}">
 										</td>
 										<td>
 											<!-- 건물 이름 --> <h2>${s.name}</h2>${s.location} 
 											<hr> <!-- 가격, 평수 -->>&nbsp;${s.price} &nbsp;
 											만원&nbsp;/&nbsp; ${s.size} &nbsp; m²&nbsp;/&nbsp;${s.condition}&nbsp; 
-											<img src="img/icon/상세보기.png" onclick="location.href='SalesDetailC?num=${s.num}'"id="salesviewImg">
-											<hr> > 특징
+											<img src="img/icon/상세보기.png" onclick="location.href='SalesDetailC?num=${s.num}'"id="salesviewImg">											
+											<hr> > 기타&옵션
 											<p>${s.etc}
 										</td>
 									</tr>

@@ -30,20 +30,20 @@
 						<td>
 						<img src="img/icon/facebook_icon.png" width="25px" id="detailsales_img" onclick="location.href='https://www.facebook.com/'">
 						<img src="img/icon/call.png" width="25px"> <hr>
-						>&nbsp;${sales.price} &nbsp;만원&nbsp;/&nbsp; ${sales.size} &nbsp; m²&nbsp;/&nbsp;${sales.condition}&nbsp; <hr>
+						>&nbsp;${sales.price} 만원&nbsp;/&nbsp; ${sales.size} m²&nbsp;/&nbsp;${sales.condition}&nbsp;/&nbsp;${sales.location} <hr>
 						${sales.etc}
 						</td>
 					</tr>
 				</table>
-				<table id="tbl_detailsaleimg" border="1">
+				<table id="tbl_detailsaleimg" style="text-align: center;">
 				<tr>
-				<td> <img src="img/sales/${sales.img1}">  </td>
+				<td> <img src="salesimg/${sales.img1}">  </td>
 				</tr>
 				<tr>
-				<td> <img src="img/sales/${sales.img2}">  </td>
+				<td> <img src="salesimg/${sales.img2}">  </td>
 				</tr>
 				<tr>
-				<td> <img src="img/sales/${sales.img3}">  </td>
+				<td> <img src="salesimg/${sales.img3}">  </td>
 				</tr>
 				</table>
 			</td>

@@ -8,7 +8,7 @@ public class sales {
 	private String name;
 	private String salesort;
 	private String location;
-	private double size;
+	private String size;
 	private String condition;
 	private String price;
 	private Date date;
@@ -22,7 +22,7 @@ public class sales {
 		// TODO Auto-generated constructor stub
 	}
 
-	public sales(String num, String name, String salesort, String location, double size, String condition, String price,
+	public sales(String num, String name, String salesort, String location, String size, String condition, String price,
 			Date date, String etc, String img1, String img2, String img3, String contact) {
 		super();
 		this.num = num;
@@ -72,11 +72,11 @@ public class sales {
 		this.location = location;
 	}
 
-	public double getSize() {
+	public String getSize() {
 		return size;
 	}
 
-	public void setSize(double size) {
+	public void setSize(String size) {
 		this.size = size;
 	}
 

@@ -44,8 +44,9 @@
 #salesviewImg {
 	cursor: pointer;
 	width: 25px;
-	margin-left: 126px;
+	margin-right: 0px;
 }
+
 /*매물 등록 페이지*/
 .regsalesTbl{
 	margin-left: auto;
@@ -92,7 +93,7 @@
 	text-align: right;
 }
 
-/*매물 등록 페이지*/
+/*매물 상세 페이지*/
 .detailsalesTbl{
 	margin-left: auto;
 	margin-right: auto;

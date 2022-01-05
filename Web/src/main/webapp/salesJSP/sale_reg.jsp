@@ -31,9 +31,9 @@
 			</tr>
 				<td id="regsalesTbl_td">거래 종류</td>
 				<td>
-					월세<input type = "checkbox" name = "condition" value = "monthlyRent">
-					전세<input type = "checkbox" name = "condition" value = "lease">
-					매매<input type = "checkbox" name = "condition" value = "sale">
+					월세<input type = "checkbox" name = "condition" value = "월세">
+					전세<input type = "checkbox" name = "condition" value = "전세">
+					매매<input type = "checkbox" name = "condition" value = "매매">
 				</td>
 			</tr>
 			<tr>
@@ -43,12 +43,12 @@
 			<tr>
 				<td id="regsalesTbl_td">지역</td>
 				<td><select name="location">
-						<option value="seoul">서울</option>
-						<option value="gyeonggido">경기도</option>
-						<option value="chungcheongdo">충청도</option>
-						<option value="gyeongsangdo">경상도</option>
-						<option value="jeollado">전라도</option>
-						<option value="jejudo">제주도</option>
+						<option value="서울">서울</option>
+						<option value="경기도">경기도</option>
+						<option value="충청도">충청도</option>
+						<option value="경상도">경상도</option>
+						<option value="전라도">전라도</option>
+						<option value="제주도">제주도</option>
 					</select></td>
 			</tr>
 			<tr>
