@@ -11,6 +11,20 @@ body {
 	background: #EDEDED;
 }
 
+#indexfootDiv{
+	height: 80px;
+	width: 100%;
+	background: #EDEDED;	
+	position: relative;
+}
+
+#indexfoot_info_div{
+	font-weight:bold;
+	font-size: 11px;
+	position: absolute;
+	right: 30px;
+	top: 10px;
+}
 #indexBtn {
 	width: 75px;
 }

@@ -7,6 +7,7 @@
 <title>Every House</title>
 <link href="img/icon/home.png" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/signup.css">
 <link rel="stylesheet" href="css/mypage.css">
 <link rel="stylesheet" href="css/community.css">
@@ -46,5 +47,11 @@
 		</td> 
 	</tr>
 	</table>
+<div id="indexfootDiv">
+ <div id="indexfoot_info_div">
+ 	♣ made by 노솔리, 이태림, 장하늬 <p>
+ 	 &nbsp;&nbsp; 기간 : 2021.12.14 - 2022.01.13
+ </div>
+</div>
 </body>
 </html>
