@@ -90,10 +90,11 @@ function sendCheckvalue() {
 	// 중복체크 결과인 idcheck 값을 전달한다.
 	opener.document.myForm.idDuplication.value = "idCheck";
 	// 회원가입 화면의 ID입력란에 값을 전달
-	opener.document.myForm.id.value = document.myForm.idinput.value;
+	opener.document.myForm.id.value = document.idcheckForm.idinput.value;
 	
 	if(opener != null) {
 		opener.chkForm = null;
 		self.close();
 	}
 }
+

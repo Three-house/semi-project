@@ -19,4 +19,18 @@
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+#home_sales_tbl:hover {
+	cursor: pointer;
+	color: blue;
+}
+
+.homeTbl
+#home_sales_tbl
+img {
+	width: 200px;
+	height: 200px;
 }

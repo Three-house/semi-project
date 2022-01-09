@@ -1,7 +1,7 @@
 function call(){
 	let i1 = document.calc.i1;
-	let i2 = document.calc.i2;
-	let i3 = document.calc.i3;
+	let i2 = document.getElementById('i2');
+	let i3 = document.getElementById('i3');
 	
 	if(isEmpty(i1)){
 		alert('매물 종류를 선택해주세요');
@@ -12,7 +12,7 @@ function call(){
 		return false;
 	}
 	if(notNumber(i2)){
-		alert('숫자만 입력해주세요');
+		alert('거래금액 : 숫자만 입력해주세요');
 		return false;
 	}
 	if(isEmpty(i3)){

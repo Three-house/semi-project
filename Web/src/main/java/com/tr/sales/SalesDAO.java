@@ -265,13 +265,51 @@ public class SalesDAO {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static void sales_topfour(HttpServletRequest request) {
+				
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select * from sales where rownum < 5";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			sales s = null;
+			ArrayList<sales> sales = new ArrayList<sales>();
+			
+			while (rs.next()) {
+				
+				String num = rs.getString("s_no");
+				String name = rs.getString("s_name");
+				String salesort = rs.getString("s_salesort");
+				String location = rs.getString("s_location");
+				String size = rs.getString("s_size");
+				String condition = rs.getString("s_condition");
+				String price = rs.getString("s_price");
+				Date date = rs.getDate("s_date");
+				String etc = rs.getString("s_etc");
+				String img1 = rs.getString("s_img1");
+				String img2 = rs.getString("s_img2");
+				String img3 = rs.getString("s_img3");
+				String contact = rs.getString("s_contact");
+				
+				s = new sales(num, name, salesort,location, size, condition, price, date, etc, img1, img2, img3, contact);
+				sales.add(s);
+				
+				
+			}
+			request.setAttribute("salesfour", sales);
+						
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
 	
 }

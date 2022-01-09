@@ -1,3 +1,4 @@
+<%@page import="com.tr.log.AccountDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,21 +9,22 @@
 <link rel="stylesheet" href="css/idcheckForm.css">
 </head>
 <body>
+
 <div id="wrap">
 	<br>
 	<b> <font size="4" color="gray">아이디 중복체크</font> </b>
 	<div style="border: 1px solid black; margin-top: 6px;"></div>
 	<br>
 	<div id="chk">
-		<form action="CheckId" id="checkFrom">
+		<form action="CheckId" id="checkFrom" name="idcheckForm">
 			<input type="text" name="idinput" id="userid" value="${param.id}">
-			<button>중복확인</button> <p>
+			<button onclick="location.href='CheckId'">중복확인</button> <p>
 			${r}
 		</form>
 		<div id="msg" style="margin-left: 20px">
 		<br>
 		<button id="cancelBtn" type="button" onclick="window.close()">취소</button> 
-		<button id="useBtn" type="button" onclick="sendCheckvalue();">사용하기</button>
+		<button type="button" onclick="sendCheckvalue(); return false;">사용하기</button>
 		</div>
 	</div>
 </div>
