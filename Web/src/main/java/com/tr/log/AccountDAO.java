@@ -305,6 +305,7 @@ public static void updateAccount(HttpServletRequest request) {
 				request.setAttribute("r", "이미 등록된 ID 입니다.");
 			}else {
 				request.setAttribute("r", "사용가능한 ID 입니다");
+				request.setAttribute("id", id);
 			}
 			
 		} catch (Exception e) {

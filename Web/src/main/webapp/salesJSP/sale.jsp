@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,8 +80,8 @@
 										</td>
 										<td>
 											<!-- 건물 이름 --> <h2>${s.name}</h2>${s.location} 
-											<hr> <!-- 가격, 평수 -->>&nbsp;${s.price} &nbsp;
-											만원&nbsp;/&nbsp; ${s.size} &nbsp; m²&nbsp;/&nbsp;${s.condition}&nbsp; 
+											<hr> <!-- 가격, 평수 -->>&nbsp;<fmt:formatNumber value="${s.price}" pattern="#,###"/> 만원
+											&nbsp;/&nbsp; ${s.size} &nbsp; m²&nbsp;/&nbsp;${s.condition}&nbsp; 
 											<img src="img/icon/상세보기.png" onclick="location.href='SalesDetailC?num=${s.num}'"id="salesviewImg">											
 											<hr> > 기타&옵션
 											<p>${s.etc}

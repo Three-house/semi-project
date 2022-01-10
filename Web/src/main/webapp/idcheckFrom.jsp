@@ -24,7 +24,8 @@
 		<div id="msg" style="margin-left: 20px">
 		<br>
 		<button id="cancelBtn" type="button" onclick="window.close()">취소</button> 
-		<button type="button" onclick="sendCheckvalue(); return false;">사용하기</button>
+		${id}
+		<button onclick="scv('${id}')">사용하기</button>
 		</div>
 	</div>
 </div>
