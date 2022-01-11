@@ -13,18 +13,34 @@ function check() {
 	
 // 아이디 (한글외 5자리이상)
 if(isEmpty(id)) {
-	alert('아이디 : 비어있습니다 확인해주세요!')
+	alert('아이디를 입력하지 않았습니다.')
 	id.focus();
 	id.value = "";
 	return false;
 }
-if(idDuplication != "idCheck") {
+
+if(lessThan(id,5) || containKR(id)) {
+	alert('아이디를 한글 외 5자리이상 입력해주세요')
+	return false;
+}
+
+/* 잘안되서 임시 주석
+ if(idDuplication != "idCheck") {
 	alert('아이디 중복체크를 해주세요!');
 	return false;
 }
+*/
 // 비밀번호 (대,소,수 포함 3자리 이상)
-if(isEmpty(pw) || lessThan(pw,3) || notContains(pw, "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()_+~")) {
-	alert('비밀번호 : 대문자, 소문자, 숫자 포함 3자리 이상 입력해주세요!');	
+if(isEmpty(pw)) {
+	alert('비밀번호를 입력하지 않았습니다.');	
+	pw.focus();
+	pw.value = "";
+	return false;
+}
+
+
+if(lessThan(pw,5) || containKR(pw)) {
+	alert('비밀번호를 한글 외 5자리이상 입력해주세요 !');	
 	pw.focus();
 	pw.value = "";
 	return false;
@@ -38,7 +54,7 @@ if(notEquals(pw,pww)) {
 	return false;
 }
 // 전화번호 2번째 자리(숫자 3자리이상)	
-if(isNotNumber(num2) || lessThan(num2,3)) {
+if(notNumber(num2) || lessThan(num2,3)) {
 	alert('전화번호(중간) : 숫자만 3자리 이상 입력해주세요')
 	
 	num2.focus();
@@ -47,11 +63,11 @@ if(isNotNumber(num2) || lessThan(num2,3)) {
 	return false;
 }
 // 전화번호 3번째 자리(숫자 자리이상)	
-if(isNotNumber(num3) || lessThan(num3,4)) {
+if(notNumber(num3) || lessThan(num3,4)) {
 	alert('전화번호(마지막) : 숫자만 4자리 이상 입력해주세요')
 	
-	num2.focus();
-	num2.value = "";
+	num3.focus();
+	num3.value = "";
 	
 	return false;
 }
@@ -64,7 +80,11 @@ function openIdchk() {
 
 	window.name = "parentForm";
 	openWin = window.open("idcheckFrom.jsp?id="+document.getElementById('id').value,"chkForm","width=500, height=300, resizable=no, scrollbars=no");
-	openWin.document.getElementById("userid").value = document.getElementById('id').value;
+	
+}
+
+function pValue() {
+	document.getElementById("userid").value = opener.document.myForm.id.value;
 }
 
 function inputIdchk() {
@@ -86,7 +106,15 @@ function idCheck() {
 	return true;
 }
 // idcheckFrom.jsp 사용하기 클릭시 부모창으로 값 전달
-function scv(n) {
-	console.log(n);
+function scv() {
+		// 중복체크 결과인 idcheck 값을 전달한다.
+	opener.document.myForm.idDuplication.value = "idCheck";
+	// 회원가입 화면의 ID입력란에 값을 전달
+	opener.document.myForm.id.value = document.getElementById('userid').value;
+	
+	if(opener != null) {
+		opener.chkForm = null;
+		self.close();
+	}
 }
 

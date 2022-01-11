@@ -88,13 +88,13 @@
 		<td style="font-size: 7px">
 		<input name="id" id="id" onkeydown="inputIdchk()"> *한글 외 5글자 이상
 		<button type="button" onclick="openIdchk()">중복확인</button>
-		<input type="hidden" name="idDuplication" value="idUncheck">
+		<input type="hidden" name="idDuplication" >
 		</td>
 	</tr>
 	<tr>
 		<td>&nbsp;&nbsp;PW</td>
 		<td style="font-size: 7px"><input name="pw" id="pw" type="password"> 
-		*3글자 이상, 대문자 소문자 숫자 중 1포함</td>
+		*한글 외 5글자 이상</td>
 	</tr>
 	<tr>
 		<td>&nbsp;&nbsp;PW 확인</td>

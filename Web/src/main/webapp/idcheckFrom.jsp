@@ -7,8 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/idcheckForm.css">
+<script type="text/javascript" src="js/check.js"></script>
 </head>
-<body>
+<body onload="pValue()">
 
 <div id="wrap">
 	<br>
@@ -17,15 +18,14 @@
 	<br>
 	<div id="chk">
 		<form action="CheckId" id="checkFrom" name="idcheckForm">
-			<input type="text" name="idinput" id="userid" value="${param.id}">
+			<input type="text" name="idinput" id="userid">
 			<button onclick="location.href='CheckId'">중복확인</button> <p>
 			${r}
 		</form>
 		<div id="msg" style="margin-left: 20px">
 		<br>
 		<button id="cancelBtn" type="button" onclick="window.close()">취소</button> 
-		${id}
-		<button onclick="scv('${id}')">사용하기</button>
+		<button onclick="scv()">사용하기</button>
 		</div>
 	</div>
 </div>
