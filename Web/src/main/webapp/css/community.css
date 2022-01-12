@@ -32,7 +32,7 @@
 
 #com_head_div{
 	text-align:center;
-	width:580px;
+	width:650px;
 	height:2px;
 	border-radius:0px;
 	background: black;
@@ -88,4 +88,37 @@
 	width: 650px;	
 	border-top: 1px solid #444444;
     border-collapse: collapse;
+}
+
+/*커뮤니티 글수정 페이지*/
+.community_updateTbl{
+	margin-left:auto;
+	margin-right:auto;	
+}
+.community_updateTbl
+#tbl_comUpdate{
+	margin-left:auto;
+	margin-right:auto;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+.community_updateTbl
+#tbl_comUpdate
+textarea{ 
+	width: 430px;
+	height: 100px;
+}
+
+/*커뮤니티 상세 페이지에 댓굴*/
+.community_writeTbl
+#tbl_reply {
+	width: 800px;
+	margin-top: 30px;
+}
+.community_writeTbl
+#tbl_reply 
+textarea{
+	width: 710px;
+	height: 50px;
 }

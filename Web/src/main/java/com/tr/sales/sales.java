@@ -8,6 +8,7 @@ public class sales {
 	private String name;
 	private String salesort;
 	private String location;
+	private String address;
 	private String size;
 	private String condition;
 	private String price;
@@ -20,24 +21,6 @@ public class sales {
 
 	public sales() {
 		// TODO Auto-generated constructor stub
-	}
-
-	public sales(String num, String name, String salesort, String location, String size, String condition, String price,
-			Date date, String etc, String img1, String img2, String img3, String contact) {
-		super();
-		this.num = num;
-		this.name = name;
-		this.salesort = salesort;
-		this.location = location;
-		this.size = size;
-		this.condition = condition;
-		this.price = price;
-		this.date = date;
-		this.etc = etc;
-		this.img1 = img1;
-		this.img2 = img2;
-		this.img3 = img3;
-		this.contact = contact;
 	}
 
 	public String getNum() {
@@ -70,6 +53,14 @@ public class sales {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getSize() {
@@ -143,5 +134,28 @@ public class sales {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
+
+	public sales(String num, String name, String salesort, String location, String address, String size,
+			String condition, String price, Date date, String etc, String img1, String img2, String img3,
+			String contact) {
+		super();
+		this.num = num;
+		this.name = name;
+		this.salesort = salesort;
+		this.location = location;
+		this.address = address;
+		this.size = size;
+		this.condition = condition;
+		this.price = price;
+		this.date = date;
+		this.etc = etc;
+		this.img1 = img1;
+		this.img2 = img2;
+		this.img3 = img3;
+		this.contact = contact;
+	}
+
+	
+	
 
 }

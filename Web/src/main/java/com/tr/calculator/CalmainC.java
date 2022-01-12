@@ -14,6 +14,7 @@ public class CalmainC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.logincheck(request);
+		request.setAttribute("dealSortPage", "calmain.jsp");
 		request.setAttribute("contentPage", "calculatorJSP/calculator.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

@@ -19,7 +19,7 @@
 	<div id="chk">
 		<form action="CheckId" id="checkFrom" name="idcheckForm">
 			<input type="text" name="idinput" id="userid">
-			<button onclick="location.href='CheckId'">중복확인</button> <p>
+			<button type="submit">중복확인</button> <p>
 			${r}
 		</form>
 		<div id="msg" style="margin-left: 20px">

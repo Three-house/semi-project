@@ -14,7 +14,7 @@
 			<td>
 				<table id="tbl_sales_head">
 					<tr>
-						<td><h2 style="font-family: 'Jua', sans-serif" align="center">매물</h2>
+						<td><h2  style = "font-family: 'Gowun Dodum', sans-serif;" align="center">매물</h2>
 							<div id="sales_head_div"></div></td>
 					</tr>
 					<tr>
@@ -28,6 +28,7 @@
 		</tr>
 		<tr>
 			<td>
+			<form action="salesSearchC" onsubmit="return search();">
 				<table border="1" id="tbl_salesSuch">
 					<tr>
 						<td colspan="5" style="background-color: #B1D0E0">매물 검색</td>
@@ -51,22 +52,22 @@
 								<option value="jejudo">제주도</option>
 						</select></td>
 						<td><select name="priceHouse">
-								<option value="zero">0만원 ~</option>
-								<option value="hundred">100만원 ~</option>
-								<option value="threehun">300만원 ~</option>
-								<option value="sixhun">600만원 ~</option>
-								<option value="tenmillion">1000만원 ~</option>
+								<option value="zero">0만원 ~ 100만원</option>
+								<option value="hundred">100만원 ~ 300만원</option>
+								<option value="threehun">300만원 ~ 600만원</option>
+								<option value="sixhun">600만원 ~ 1000만원</option>
+								<option value="tenmillion">1000만원 ~ 1억원</option>
 								<option value="hundredmillion">1억원 ~</option>
 						</select></td>
 						<td><select name="TypeofSale">
-								<option value="oneroom">원룸</option>
 								<option value="lease">전세</option>
 								<option value="monthlyRent">월세</option>
 								<option value="sale">매매</option>
 						</select></td>
-						<td><input name="searchRoom" /></td>
+						<td><input name="searchRoom" id="searchi1" placeholder="매물의 이름을 입력해주세요."></td>
 					</tr>
 				</table>
+			</form>
 			</td>
 		</tr>
 		<tr>
@@ -76,7 +77,7 @@
 							<td>
 								<table border="1" id="tbl_salesview">
 									<tr>
-										<td width="200px;"><img src="salesimg/${s.img1}">
+										<td width="200px;"><img src="sales_img/${s.img1}" width="200px">
 										</td>
 										<td>
 											<!-- 건물 이름 --> <h2>${s.name}</h2>${s.location} 
@@ -93,6 +94,16 @@
 					</table>
 				</c:forEach></td>
 		</tr>
+	<tr>
+	<td align="center">
+		<a href="SalesPageC?p=1" id="salesPaging">[맨앞으로]</a>
+		<c:forEach var="p" begin="1" end="${pageCount}">
+			<a href="SalesPageC?p=${p}" id="salesPaging">[${p}]</a>
+		</c:forEach>
+		<a href="SalesPageC?p=${pageCount}" id="salesPaging">[맨뒤로]</a>
+	</td>
+	</tr>
 	</table>
+	
 </body>
 </html>

@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>Every House</title>
 <link href="img/icon/home.png" rel="shortcut icon" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Cute+Font&family=Do+Hyeon&family=Dongle:wght@300&family=East+Sea+Dokdo&family=Gowun+Batang&family=Gowun+Dodum&family=Hahmlet:wght@100;300&family=Jua&family=Song+Myung&family=Sunflower:wght@300&family=Yeon+Sung&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/signup.css">
@@ -19,6 +22,9 @@
 <script type="text/javascript" src="js/tradeCheck.js"></script>
 <script type="text/javascript" src="js/comments.js"></script>
 <script type="text/javascript" src="js/community.js"></script>
+<script type="text/javascript" src="js/salesReg.js"></script>
+<script type="text/javascript" src="js/salesSearch.js"></script>
+<script type="text/javascript" src="js/reply.js"></script>
 </head>
 <body>
 	<div id="indexHeadDiv"></div>

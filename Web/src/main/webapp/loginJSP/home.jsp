@@ -10,9 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table class="homeTbl" border="0">
-		<tr height="300px" width="800px;" align="center">
-			<td colspan="4"><img src="img/bener/배너.png" height="300px"
+	<table class="homeTbl">
+		<tr width="800px;" align="center">
+			<td colspan="4" height="250px;"><img src="img/bener/배너.png" height="300px"
 				width="700px;"></td>
 		</tr>
 		<tr>
@@ -36,9 +36,7 @@
 				<button style="font-size: 8px;" onclick="location.href='salesC'">매물보러가기</button>
 			</td>
 		</tr>
-		<tr>
-			<td colspan="4"><아직모름></td>
-		</tr>
+		<tr><td colspan="4" style="color: white;">------</td></tr>
 	</table>
 </body>
 </html>

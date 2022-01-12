@@ -13,8 +13,20 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.tr.log.DBManager;
 
 public class ComDAO {
-
-	public static void regCom(HttpServletRequest request) {
+	
+	private ArrayList<Community> communities;
+	
+	private static final ComDAO CDAO = new ComDAO();
+	
+	private ComDAO() {
+		
+	}
+	
+	public static ComDAO getCdao() {
+		return CDAO;
+	}
+	
+	public void regCom(HttpServletRequest request) {
 		//커뮤 글 등록
 		
 		Connection con = null;
@@ -30,7 +42,7 @@ public class ComDAO {
 			
 			pstmt = con.prepareStatement(sql);
 			
-			String saveDirectory = request.getServletContext().getRealPath("img/community");
+			String saveDirectory = request.getServletContext().getRealPath("com_img");
 			System.out.println(saveDirectory);
 			
 			MultipartRequest mr = new MultipartRequest(request, saveDirectory,
@@ -65,14 +77,15 @@ public class ComDAO {
 		
 	}
 
-	public static void getAllCom(HttpServletRequest request) {
+
+	public void getAllCom(HttpServletRequest request) {
 		// 커뮤니티 글 다 보기
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from community";
+		String sql = "select * from community order by c_date";
 		
 		try {
 			
@@ -80,7 +93,8 @@ public class ComDAO {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			ArrayList<Community> communities = new ArrayList<Community>();
+			communities = new ArrayList<Community>();
+			
 			Community c = null;
 			
 			while (rs.next()) {
@@ -105,7 +119,7 @@ public class ComDAO {
 		}
 	}
 
-	public static void getCom(HttpServletRequest request) {
+	public void getCom(HttpServletRequest request) {
 		// 선택한 글 정보
 
 		Connection con = null;
@@ -147,7 +161,7 @@ public class ComDAO {
 		}
 	}
 
-	public static void searchCom(HttpServletRequest request) {
+	public void searchCom(HttpServletRequest request) {
 		// 검색하기
 
 		Connection con = null;
@@ -168,7 +182,7 @@ public class ComDAO {
 			
 			rs = pstmt.executeQuery();
 			
-			ArrayList<Community> communities = new ArrayList<Community>();
+			communities = new ArrayList<Community>();
 			Community c = null;
 			
 			while (rs.next()) {
@@ -193,7 +207,7 @@ public class ComDAO {
 		
 	}
 
-	public static void deleteCom(HttpServletRequest request) {
+	public void deleteCom(HttpServletRequest request) {
 		// 삭제하기
 		
 		Connection con = null;
@@ -224,7 +238,7 @@ public class ComDAO {
  		}
 	}
 
-	public static void updateCom(HttpServletRequest request) {
+	public void updateCom(HttpServletRequest request) {
 		// 수정하기
 		
 		Connection con = null;
@@ -259,5 +273,38 @@ public class ComDAO {
 		}
 		
 	}
-
+	
+	public void paging(int page, HttpServletRequest request) {
+			
+			// 현재 페이지 
+			request.setAttribute("curPageNo", page); // view에서 쓰기 위해
+			
+			// 전체 페이지 수 계산
+			int cnt = 10; // 한 페이지당 보여줄 개수
+			
+			int total = communities.size(); // 총 데이터 개수
+						// size() : 길이
+			
+			//	총페이지수
+			int pageCount = (int) Math.ceil((double) total / cnt);
+			request.setAttribute("pageCount", pageCount);
+			 
+			int start = total - (cnt * (page - 1));
+			
+			int end = (page == pageCount) ? -1 : start - (cnt + 1);
+			
+			ArrayList<Community> items = new ArrayList<Community>(); 
+					
+											// 역순
+			for (int i = start - 1; i > end; i--) {
+							// 0 > -1 
+						// 배열 -> 0부터 시작 
+				
+				items.add(communities.get(i));
+			}
+			
+			request.setAttribute("communities", items);
+			
+	
+		}
 }

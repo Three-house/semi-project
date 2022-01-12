@@ -47,6 +47,16 @@
 	margin-right: 0px;
 }
 
+	/*메인페이지 페이징 a태그*/
+#salesPaging {
+	text-decoration: none;
+	color: black;
+}
+
+#salesPaging:hover {
+	color: #1C6DD0;
+}
+
 /*매물 등록 페이지*/
 .regsalesTbl{
 	margin-left: auto;
@@ -134,3 +144,16 @@
 	cursor: pointer;
 }
 
+/*세일즈 상세 페이지에 댓굴*/
+.detailsalesTbl
+#tbl_reply {
+	width: 800px;
+	margin-top: 30px;
+	text-align: center;
+}
+.detailsalesTbl
+#tbl_reply 
+textarea{
+	width: 730px;
+	height: 50px;
+}

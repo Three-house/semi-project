@@ -13,7 +13,7 @@
 <table id="tbl_regsales_head">
 <tr>
 <td>
-<h2 style = "font-family: 'Jua', sans-serif" align = "center">매물 내놓기</h2>
+<h2 style = "font-family: 'Jua', sans-serif" align = "center">매물 정보 수정</h2>
 <div id="regsales_head_div"></div>
 </td>
 </tr>
@@ -22,12 +22,12 @@
 </tr>
 <tr>
 <td>
-	<form action = "SalesRegC" method = "post" enctype = "multipart/form-data" onsubmit="return salesReg();">
+<form action = "SalesUpdateC" method = "post" enctype = "multipart/form-data" onsubmit="return salesReg();">
 		<table border = 1 id = "tbl_salesReg">
 			<tr>
 			<tr>
 				<td id="regsalesTbl_td">건물명</td>
-				<td><input name = "buildingName" id="salesName"></td>
+				<td><input name = "buildingName" id="salesName" value="${sales.name}"></td>
 			</tr>
 				<td id="regsalesTbl_td">거래 종류</td>
 				<td>
@@ -41,7 +41,7 @@
 			</tr>
 			<tr>
 				<td id="regsalesTbl_td">건물종류</td>
-				<td> <input name="salesort" id="salesSort"> </td>
+				<td> <input name="salesort" id="salesSort" value="${sales.salesort}"> </td>
 			</tr>
 			<tr>
 				<td id="regsalesTbl_td">지역</td>
@@ -56,53 +56,50 @@
 			</tr>
 			<tr>
 				<td id="regsalesTbl_td">상세 주소</td>
-				<td><input name = "address" id="salesAddress" size=40></td>
+				<td><input name = "address" id="salesAddress" size=40 value="${sales.address}"> </td>
 			</tr>
 			<tr>
 				<td id="regsalesTbl_td">가격</td>
-				<td><input name = "price" placeholder="원/보증금은 옵션에 적어주세요." size=25 id="salesPrice"></td>
+				<td><input name = "price" placeholder="원/보증금은 옵션에 적어주세요." size=25 id="salesPrice" value="${sales.price}"></td>
 			</tr>
 			<tr>
 				<td id="regsalesTbl_td">크기</td>
-				<td><input name = "size" placeholder="㎡" id="salesSize"></td>
+				<td><input name = "size" placeholder="㎡" id="salesSize" value="${sales.size}"></td>
 			</tr>
 			<tr>
 				<td id="regsalesTbl_td">옵션</td>
-				<td><input name = "etc" placeholder="500자 이내로 작성해주세요." id="salesEtc"></td>
+				<td><input name = "etc" placeholder="500자 이내로 작성해주세요." id="salesEtc" value="${sales.etc}"></td>
 			</tr>
 			<tr> 
 				<td id="regsalesTbl_td">사진1</td>
-				<td><input type = "file" name = "img1" id="salesImg1"></td>
+				<td> <img src="salesimg/${sales.img1}" width="200px"><br>
+				<input type = "file" name = "img1" id="salesImg1"></td>
 			</tr>
 			<tr> 
 				<td id="regsalesTbl_td">사진2</td>
-				<td><input type = "file" name = "img2" id="salesImg2"></td>
+				
+				<td><img src="salesimg/${sales.img2}" width="200px"><br>
+				<input type = "file" name = "img2" id="salesImg2"></td>
 			</tr>
 			<tr> 
 				<td id="regsalesTbl_td">사진3</td>
-				<td><input type = "file" name = "img3" id="salesImg3"></td>
+				
+				<td><img src="salesimg/${sales.img3}" width="200px"><br>
+				<input type = "file" name = "img3" id="salesImg3"></td>
 			</tr>
 			<tr>
 				<td id="regsalesTbl_td">연락처</td>
-				<td><input name = "contact" id="salesContact"></td>
+				<td><input name = "contact" id="salesContact" value="${sales.contact}"></td>
 			</tr>
 		</table>
 		<table id="tbl_regsales_button">
 		<tr>
 			<td>
-				<button>매물 등록</button>		
+			    <button onclick="history.back()">목록보기</button>
+				<button>수정</button>		
 			</td>
 		</tr>
 		</table>				
 	</form>
-</td>
-</tr>
-<tr>
-<td>
-<p align="right">
-<button onclick = "history.back()">목록보기</button>
-</td>
-</tr>
-</table>
 </body>
 </html>

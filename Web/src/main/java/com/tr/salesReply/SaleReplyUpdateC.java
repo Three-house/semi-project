@@ -1,4 +1,4 @@
-package com.tr.calculator;
+package com.tr.salesReply;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,27 +7,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.tr.comment.ReplyDAO;
+import com.tr.community.ComDAO;
 import com.tr.log.AccountDAO;
 
-@WebServlet("/CalculatorC")
-public class CalculatorC extends HttpServlet {
+@WebServlet("/SaleReplyUpdateC")
+public class SaleReplyUpdateC extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
 		AccountDAO.logincheck(request);
 		
-		if (request.getParameter("deal_sort").equals("매매")) {
-			Calculator.calc_trade(request);
-			}else if(request.getParameter("deal_sort").equals("전세")||request.getParameter("deal_sort").equals("월세")) {
-				Calculator.calc_jm(request);
-			}
-	
-		request.setAttribute("contentPage", "calculatorJSP/calc_result.jsp");
+		ReplyDAO.updateReplies(request);
+		ReplyDAO.getAllReplies(request);
+						
+		ComDAO.getCdao().getAllCom(request);
+						
+		request.setAttribute("contentPage", "salesJSP/sale.jsp");
+							
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-	
 	}
 
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	}
 
 }

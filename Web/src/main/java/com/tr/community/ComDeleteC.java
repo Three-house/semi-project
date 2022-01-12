@@ -15,8 +15,10 @@ public class ComDeleteC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.logincheck(request);
-		ComDAO.deleteCom(request);
-		ComDAO.getAllCom(request);
+		
+		ComDAO.getCdao().deleteCom(request);
+		ComDAO.getCdao().getAllCom(request);
+		ComDAO.getCdao().paging(1, request);
 	
 		request.setAttribute("contentPage", "communityJSP/community.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

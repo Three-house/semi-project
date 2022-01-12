@@ -14,7 +14,7 @@
 				<table id="tbl_calculator_head">
 					<tr>
 						<td>
-							<h2 style="font-family: 'Jua', sans-serif" align="center">중개보수
+							<h2  style = "font-family: 'Gowun Dodum', sans-serif;" align="center">중개보수
 								계산</h2>
 							<div id="com_write_head_div"></div>
 						</td>
