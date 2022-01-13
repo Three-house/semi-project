@@ -24,7 +24,7 @@ public class SaleReplyRegC extends HttpServlet {
 		SaleReplyDAO.regSaleReply(request);
 		SaleReplyDAO.getAllSaleReply(request);
 		
-		SalesDAO.sales_select_all(request);
+		SalesDAO.getSdao().sales_select_all(request);
 		
 		request.setAttribute("contentPage", "saleJSP/sale.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

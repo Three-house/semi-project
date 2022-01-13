@@ -20,7 +20,7 @@ public class SalesDAO {
 	
 	private static final SalesDAO SDAO = new SalesDAO();
 	
-	public SalesDAO() {
+	private SalesDAO() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -31,19 +31,19 @@ public class SalesDAO {
 	}
 	
 	// 매물 전체 조회
-	public static void sales_select_all(HttpServletRequest request) {
+	public void sales_select_all(HttpServletRequest request) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from sales order by s_date desc";
+		String sql = "select * from sales order by s_date";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
 			sales s = null;
-			ArrayList<sales> sales = new ArrayList<sales>();
+			sales = new ArrayList<sales>();
 			
 			while (rs.next()) {
 				
@@ -87,7 +87,7 @@ public class SalesDAO {
 		}
 	}
 	
-	public static void sales_select_one(HttpServletRequest request) {
+	public void sales_select_one(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -143,7 +143,7 @@ public class SalesDAO {
 		}
 	}
 	
-	public static void sales_update(HttpServletRequest request) {
+	public  void sales_update(HttpServletRequest request) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -238,7 +238,7 @@ public class SalesDAO {
 		
 	}
 	
-	public static void sales_insert(HttpServletRequest request) {
+	public  void sales_insert(HttpServletRequest request) {
 		
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -302,7 +302,7 @@ public class SalesDAO {
 		
 	}
 	
-	public static void sales_topfour(HttpServletRequest request) {
+	public  void sales_topfour(HttpServletRequest request) {
 				
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -316,7 +316,7 @@ public class SalesDAO {
 			rs = pstmt.executeQuery();
 			
 			sales s = null;
-			ArrayList<sales> sales = new ArrayList<sales>();
+			sales = new ArrayList<sales>();
 			
 			while (rs.next()) {
 				
@@ -357,25 +357,24 @@ public class SalesDAO {
 		request.setAttribute("curPageNo", page);
 		
 		// 전체 페이지 수 계산
-		int cnt = 3; // 한 페이지당 보여줄 개수
-		int total = sales.size(); // 총 데이터 개수
+		 int cnt = 3; // 한 페이지당 보여줄 개수
+		 int total = sales.size(); // 총 데이터 개수 .. 배열이라서 size 사용
+		 
+		 int pageCount = (int) Math.ceil((double)total / cnt); 
+		 request.setAttribute("pageCount", pageCount);
 		
-		int pageCount = (int) Math.ceil((double) total / cnt);
-		request.setAttribute("pageCount", pageCount);
-		
-		int start = total - (cnt * (page - 1));
-		
-		int end = (page == pageCount) ? -1 : start - (3 + 1);
-		
-		
-		
-		
-		ArrayList<sales> items = new ArrayList<sales>();
-		
-		for (int i = start-1; i > end ; i--) {
-			items.add(sales.get(i));
-		}
-		request.setAttribute("sales", items);
+		 // int 시작데이터번호2 = 총데이터수 - (한페이지당보여줄개수 * (페이지번호 -1));
+		 int start = total - (cnt * (page - 1));
+		 
+		 // int  끝데이터번호2 = (페이지번호 == 총페이지수) ? -1 : 시작데이터번호2 - (한페이지당보여줄개수 + 1);
+		 int end = (page == pageCount) ? -1 : start- (3 + 1);
+	 
+		 ArrayList<sales> items = new ArrayList<sales>();
+		 for (int i = start-1; i > end; i--) { // start-1은 현실세계에서 사용자는 1부터보지만 컴퓨터세계에선 배열이 0부터 시작함으로 
+			 items.add(sales.get(i));
+		 }
+		 
+		 request.setAttribute("sales", items);
 		
 	}
 	
@@ -444,7 +443,7 @@ public class SalesDAO {
 			
 			
 			sales s = null;
-			ArrayList<sales> sales = new ArrayList<sales>();
+			sales = new ArrayList<sales>();
 			
 			while (rs.next()) {
 				

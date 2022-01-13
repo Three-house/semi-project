@@ -23,8 +23,8 @@ public class SalesRegC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.logincheck(request);
-		SalesDAO.sales_insert(request);
-		SalesDAO.sales_select_all(request);
+		SalesDAO.getSdao().sales_insert(request);
+		SalesDAO.getSdao().sales_select_all(request);
 		request.setAttribute("contentPage", "salesJSP/sale.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

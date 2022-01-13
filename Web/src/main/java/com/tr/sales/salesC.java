@@ -15,7 +15,8 @@ public class salesC extends HttpServlet {
 		
 		
 		AccountDAO.logincheck(request);
-		SalesDAO.sales_select_all(request);
+		SalesDAO.getSdao().sales_select_all(request);
+		SalesDAO.getSdao().paging(1, request);
 		request.setAttribute("contentPage", "salesJSP/sale.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

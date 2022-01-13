@@ -17,7 +17,7 @@ public class HC extends HttpServlet {
 		
 		request.setAttribute("loginPage", "loginJSP/loginInfo.jsp");
 		// 랜덤으로 매물 들고오기
-		SalesDAO.sales_topfour(request);
+		SalesDAO.getSdao().sales_topfour(request);
 		request.setAttribute("contentPage", "loginJSP/home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

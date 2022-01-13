@@ -95,13 +95,14 @@
 				</c:forEach></td>
 		</tr>
 	<tr>
-	<td align="center">
-		<a href="SalesPageC?p=1" id="salesPaging">[맨앞으로]</a>
-		<c:forEach var="p" begin="1" end="${pageCount}">
-			<a href="SalesPageC?p=${p}" id="salesPaging">[${p}]</a>
-		</c:forEach>
-		<a href="SalesPageC?p=${pageCount}" id="salesPaging">[맨뒤로]</a>
-	</td>
+         <td id="r_pageTd" align="center">
+         	  <a href="SalesPageC?p=1"> [맨처음] </a>
+            <c:forEach var="p" begin="1" end="${pageCount}">
+               <!-- 페이지 카운터를 누르면 해당 페이지로 이동함 -->
+               <a href="SalesPageC?p=${p }">[${p }]</a>
+            </c:forEach>
+               <a href="SalesPageC?p=${pageCount}"> [맨끝] </a>
+         </td>
 	</tr>
 	</table>
 	

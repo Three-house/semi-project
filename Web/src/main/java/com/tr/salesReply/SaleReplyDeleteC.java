@@ -23,7 +23,7 @@ public class SaleReplyDeleteC extends HttpServlet {
 		SaleReplyDAO.deleteSaleReply(request);
 		SaleReplyDAO.getAllSaleReply(request);
 		
-		SalesDAO.sales_select_all(request);
+		SalesDAO.getSdao().sales_select_all(request);
 		
 		request.setAttribute("contentPage", "saleJSP/sale.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

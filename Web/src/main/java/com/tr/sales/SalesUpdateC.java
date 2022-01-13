@@ -26,7 +26,7 @@ public class SalesUpdateC extends HttpServlet {
 		
 		SalesDAO.getSdao().sales_update(request);
 		SalesDAO.getSdao().sales_select_all(request);
-		//SalesDAO.getSdao().paging(1, request);
+		SalesDAO.getSdao().paging(1, request);
 		AccountDAO.logincheck(request);
 		request.setAttribute("contentPage", "salesJSP/sale.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

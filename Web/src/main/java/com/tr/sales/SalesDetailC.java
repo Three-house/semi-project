@@ -15,7 +15,7 @@ public class SalesDetailC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		AccountDAO.logincheck(request);
-		SalesDAO.sales_select_one(request);
+		SalesDAO.getSdao().sales_select_one(request);
 		request.setAttribute("contentPage", "salesJSP/sale_detail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
