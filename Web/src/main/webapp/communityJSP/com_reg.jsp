@@ -28,18 +28,18 @@ String id = a.getId();
 		<table border = 1 id = "tbl_comReg">
 			<tr>
 				<td style="background-color: #F5F5F5">제목</td>
-				<td><input id = "regInput" name = "title" required="required" placeholder = "제목"></td>
+				<td><input id = "regInput" name = "title" required="required" placeholder = "제목" size="80"></td>
 			</tr>
 			<tr>
 				<td style="background-color: #F5F5F5">작성자</td>
-				<td><input id = "regInput" name = "userId" placeholder = "작성자" value="<%=id%>"></td>
+				<td><input id = "regInput" name = "userId" placeholder = "작성자" value="<%=id%>" size="80"></td>
 			</tr>
 			<tr>
 				<td colspan = "2" style="background-color: #F5F5F5">내용</td>
 			</tr>
 			<tr>
 				<td colspan = "2" height="100px;">
-					<textarea id = "comText" name = "content" required="required" placeholder = "내용을 입력해주세요."></textarea>
+					<textarea id = "comText" name = "content" required="required" placeholder = "내용을 입력해주세요." style="width: 640px; height: 100px;"></textarea>
 				</td>
 			</tr>
 			<tr height="40px;"> 

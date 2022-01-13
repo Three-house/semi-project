@@ -9,17 +9,17 @@
 </head>
 <body>
 <table class="community_updateTbl">
-<tr>
-<td  align = "right">
-	<button onclick = "location.href = 'ComC'">목록으로</button>
-</td>
-<tr>
 <td>
 <h2  style = "	font-family: 'Gowun Dodum', sans-serif; font-weight : bold;" align = center>글 수정</h2>
 <div id="com_write_head_div"></div>
 <br>
 </td>
 </tr>
+<tr>
+<td  align = "right">
+	<button onclick = "location.href = 'ComC'">목록으로</button>
+</td>
+<tr>
 <tr>
 <td>
 	<form action = "ComUpdateC" method = "post">	

@@ -15,7 +15,7 @@
 				<table id="tbl_detailsales_head" >
 					<tr>
 						<td>
-							<h2 style="font-family: 'Jua', sans-serif" align="center">매물
+							<h2 style = "font-family: 'Gowun Dodum', sans-serif;" align="center">매물
 								상세보기</h2>
 							<div id="detailsales_head_div"></div>
 						</td>

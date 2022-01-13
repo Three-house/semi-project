@@ -7,7 +7,8 @@
 	<title>지도</title>
 </head>
 <body>
-	<div id="map" style="width:80%;height:800px;"></div>
+	<h2 style = "font-family: 'Gowun Dodum', sans-serif;" align="center">지도</h2>
+	<div id="map" style="width:80%;height:800px; margin-left: 100px;;"></div>
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c81fc8b02285d02508dc89a5a8615f74"></script>
 	<script>

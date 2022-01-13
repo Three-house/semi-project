@@ -406,21 +406,21 @@ public class SalesDAO {
 			int min = 0;
 			int max = 0;
 			if (priceHouse.equals("zero")) {
-				max = 1000000;
+				max = 100;
 			}else if (priceHouse.equals("hundred")) {
-				min = 1000000;
-				max = 3000000;
+				min = 100;
+				max = 300;
 			}else if (priceHouse.equals("threehun")) {
-				min = 3000000;
-				max = 6000000;
+				min = 300;
+				max = 600;
 			}else if (priceHouse.equals("sixhun")) {
-				min = 6000000;
-				max = 10000000;
+				min = 600;
+				max = 1000;
 			}else if (priceHouse.equals("tenmillion")) {
-				min = 10000000;
-				max = 100000000;
+				min = 1000;
+				max = 10000;
 			}else if (priceHouse.equals("hundredmillion")) {
-				min = 100000000;
+				min = 10000;
 				max = 2147483647;
 			}
 			String TypeofSale = request.getParameter("TypeofSale");

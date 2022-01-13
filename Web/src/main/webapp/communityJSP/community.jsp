@@ -49,14 +49,14 @@ if(hs.getAttribute("accountInfo") == null) {%>
 				<table border=1 id="tbl_community">
 					<thead>
 						<tr style="background-color: #B1D0E0">
-							<th align="center">번호</th>
-							<th align="center">작성자</th>
+							<th align="center" width="50px;">번호</th>
+							<th align="center" width="70px;">작성자</th>
 							<th align="center">제목</th>
-							<th align="center">등록일</th>
+							<th align="center" width="190px;">등록일</th>
 						</tr>
 					</thead>
 					<c:forEach var="c" items="${communities }">
-						<tr class="com_tr1">
+						<tr class="com_tr1" style="cursor: pointer;">
 							<td class="com_td1"
 								onclick="location.href = 'ComDetailC?num=${c.no}'">${c.no }
 							
