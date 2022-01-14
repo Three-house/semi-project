@@ -16,7 +16,7 @@ function login_check() {
 }
 </script>
 </head>
-<body>
+<body style="font-family: 'Gowun Dodum', sans-serif;">
 	<table class="communityTbl">
 		<tr>
 			<td>
@@ -25,9 +25,6 @@ function login_check() {
 						<td><h2 style = "font-family: 'Gowun Dodum', sans-serif;" align="center">커뮤니티</h2>
 						<div id="com_head_div"></div>
 						</td>
-					</tr>
-					<tr>
-						<td><h4 style="font-family: 'Jua', sans-serif" align="center">${r }</h4></td>					
 					</tr>
 					<tr>
 						<td>

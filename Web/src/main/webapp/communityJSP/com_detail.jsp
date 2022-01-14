@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="font-family: 'Gowun Dodum', sans-serif;">
 <table class="community_writeTbl">
 <tr>
 <td>
@@ -70,7 +70,7 @@
 		<tr>
 			<td colspan = "2">
 				<button>댓글 등록</button>
-				<!-- <input id = "replyReset" type = "reset" value = "다시쓰기"> -->
+				<!--<input id = "replyReset" type = "reset" value = "다시쓰기">--> 
 				<button id = "replyReset" type="reset" value="다시쓰기">다시쓰기</button>
 			</td>
 		</tr>
@@ -80,16 +80,16 @@
 </tr>	
 <tr>
 <td>
-	<!-- 댓글 리스트 -->
-	<table id = "replyList" >
+		<!-- 댓글 리스트 -->
+	<table id = "replyList">
 		<c:forEach var = "r" items = "${repls }">
 			<tr>
-				<td class = "relist" style = "font-size : small; color : grey;" width = "10px">${r.re_no }</td>
+				<td class = "relist" style = "font-size : small; color : grey;" width = "30px"">${r.re_no }</td>
 				<td class = "relist" style = "font-weight : bold;" width = 250px">${r.re_name }</td>
 				<td class = "relist" style = "font-size : small; color : grey;"><fmt:formatDate value="${r.re_date }" type="both" dateStyle="long" /></td>
 				<td class = "relist" >
-					<span  style = "font-size : small; color : grey;" onclick= "replyUpdate('${r.re_name }', '${r.re_content }','${r.re_no }')">수정</span> &nbsp; 
-					<span  style = "font-size : small; color : grey;" onclick = "replyDelete(${r.re_no })">삭제</span>
+					<span  style = "font-size : small; color : grey; cursor: pointer;" onclick= "replyUpdate('${r.re_name }', '${r.re_content }','${r.re_no }')">수정</span> &nbsp; 
+					<span  style = "font-size : small; color : grey; cursor: pointer;" onclick = "replyDelete(${r.re_no })">삭제</span>
 				</td>
 			</tr>
 			<tr>

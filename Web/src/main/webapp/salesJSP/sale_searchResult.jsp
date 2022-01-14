@@ -7,13 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="font-family: 'Gowun Dodum', sans-serif;">
 	<table class="salesTbl">
 		<tr>
 			<td>
 				<table id="tbl_sales_head">
 					<tr>
-						<td><h2 style="font-family: 'Jua', sans-serif" align="center">매물</h2>
+						<td><h2 align="center">매물</h2>
 							<div id="sales_head_div"></div></td>
 					</tr>
 					<tr>

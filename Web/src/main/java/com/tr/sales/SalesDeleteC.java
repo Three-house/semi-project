@@ -18,8 +18,7 @@ public class SalesDeleteC extends HttpServlet {
 		AccountDAO.logincheck(request);
 		SalesDAO.getSdao().sales_delete(request);
 		SalesDAO.getSdao().sales_select_all(request);
-		//페이징 때문에 에러나서 주석함
-		//SalesDAO.getSdao().paging(1, request);
+		SalesDAO.getSdao().paging(1, request);
 		request.setAttribute("contentPage", "salesJSP/sale.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		

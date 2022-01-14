@@ -7,14 +7,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="font-family: 'Gowun Dodum', sans-serif;">
 	<table class="calculatorTbl">
 		<tr>
 			<td>
 				<table id="tbl_calculator_head">
 					<tr>
 						<td>
-							<h2  style = "font-family: 'Gowun Dodum', sans-serif;" align="center">중개보수
+							<h2 align="center">중개보수
 								계산</h2>
 							<div id="com_write_head_div"></div>
 						</td>

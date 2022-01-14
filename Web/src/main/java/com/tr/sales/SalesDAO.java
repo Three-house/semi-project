@@ -24,8 +24,6 @@ public class SalesDAO {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
 	public static SalesDAO getSdao() {
 		return SDAO;
 	}
@@ -118,20 +116,20 @@ public class SalesDAO {
 				String img3 = rs.getString("s_img3");
 				String contact = rs.getString("s_contact");
 				// 매물 상세보기페이지 값넘어오는지 화인ok
-				System.out.println("----------------디테일부문-------------");
-				System.out.println(name);
-				System.out.println(salesort);
-				System.out.println(location);				
-				System.out.println(address);				
-				System.out.println(size);
-				System.out.println(condition);
-				System.out.println(price);
-				System.out.println(date);
-				System.out.println(etc);
-				System.out.println(img1);
-				System.out.println(img2);
-				System.out.println(img3);
-				System.out.println(contact);
+//				System.out.println("----------------디테일부문-------------");
+//				System.out.println(name);
+//				System.out.println(salesort);
+//				System.out.println(location);				
+//				System.out.println(address);				
+//				System.out.println(size);
+//				System.out.println(condition);
+//				System.out.println(price);
+//				System.out.println(date);
+//				System.out.println(etc);
+//				System.out.println(img1);
+//				System.out.println(img2);
+//				System.out.println(img3);
+//				System.out.println(contact);
 				
 				s = new sales(num, name, salesort,location,address, size, condition, price, date, etc, img1, img2, img3, contact);
 			}

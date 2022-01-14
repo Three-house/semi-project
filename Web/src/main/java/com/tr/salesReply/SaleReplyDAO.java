@@ -71,13 +71,21 @@ public class SaleReplyDAO {
 				sr.setS_content(rs.getString("s_content"));
 				sr.setS_date(rs.getDate("s_date"));
 				
+//				System.out.println("-----댓글 값 넘어오는지 확인-----");
+//				System.out.println(rs.getInt("s_no"));
+//				System.out.println(rs.getString("s_name"));
+//				System.out.println(rs.getString("s_content"));
+//				System.out.println(rs.getDate("s_date"));
+				
 				saleReplies.add(sr);
 			}
 			
 			request.setAttribute("saleReplies", saleReplies);
+
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("DB에러 ...");
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}

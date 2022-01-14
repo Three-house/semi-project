@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="font-family: 'Gowun Dodum', sans-serif;">
 	<table class="salesTbl">
 		<tr>
 			<td>

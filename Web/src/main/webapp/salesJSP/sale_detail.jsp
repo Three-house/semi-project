@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
@@ -7,7 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="font-family: 'Gowun Dodum', sans-serif;">
+
 
 	<table class="detailsalesTbl">
 		<tr>
@@ -15,7 +17,7 @@
 				<table id="tbl_detailsales_head" >
 					<tr>
 						<td>
-							<h2 style = "font-family: 'Gowun Dodum', sans-serif;" align="center">매물
+							<h2 align="center">매물
 								상세보기</h2>
 							<div id="detailsales_head_div"></div>
 						</td>
@@ -89,14 +91,14 @@
 		<td>
 	<!-- 댓글 리스트 -->
 	<table id = "replyList" >
-		<c:forEach var = "s" items = "${saleReplies }">
-			<tr>
-				<td class = "relist" style = "font-size : small; color : grey;" width = "10px">${s.s_no }</td>
+		<c:forEach var = "s" items = "${saleReplies}">
+			<tr align="center">
+				<td class = "relist" style = "font-size : small; color : grey;" width = "30px">${s.s_no }</td>
 				<td class = "relist" style = "font-weight : bold;" width = 250px">${s.s_name }</td>
 				<td class = "relist" style = "font-size : small; color : grey;"><fmt:formatDate value="${s.s_date }" type="both" dateStyle="long" /></td>
 				<td class = "relist">
-					<span  style = "font-size : small; color : grey;" onclick = "saleReplyUpdate('${s.s_name }', '${s.s_content }','${s.s_no }')">수정</span> 
-					<span  style = "font-size : small; color : grey;" onclick = "saleReplyDelete(${s.s_no })">삭제</span>
+					<span  style = "font-size : small; color : grey;  cursor: pointer;" onclick = "saleReplyUpdate('${s.s_name }', '${s.s_content }','${s.s_no }')">수정</span> 
+					<span  style = "font-size : small; color : grey;  cursor: pointer;" onclick = "saleReplyDelete(${s.s_no })">삭제</span>
 				</td>
 			</tr>
 			<tr>
@@ -111,7 +113,6 @@
 		</td>
 		</tr>
 	</table>
-
 
 
 

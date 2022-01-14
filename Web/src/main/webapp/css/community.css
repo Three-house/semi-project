@@ -82,6 +82,7 @@
 /*커뮤니티 글쓰기 페이지*/
 .community_writeTbl
 #tbl_comReg {
+	font-family: 'Gowun Dodum', sans-serif;
 	margin-top:30px;
 	margin-left:auto;
 	margin-right:auto;
@@ -109,7 +110,7 @@ textarea{
 	width: 430px;
 	height: 100px;
 }
-
+/*-------------------------댓글 관련  css-------------------------*/
 /*커뮤니티 상세 페이지에 댓굴*/
 .community_writeTbl
 #tbl_reply {
@@ -122,3 +123,39 @@ textarea{
 	width: 710px;
 	height: 50px;
 }
+/*--??--*/
+#comText{
+    width: 650px;
+    height: 300px;
+    border : none;
+    resize: none;
+  }
+  
+#comText:focus{
+	outline : none;
+}
+
+#regInput{
+	width : 300px;
+}
+#regInput:focus{
+	outline : none;
+}
+/*댓글 리스트 테이블*/
+#replyList{
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	border-collapse: collapse;
+	background-color :  #e8e8e8;
+}
+
+#reCon{
+	border-top: 1px solid #adadad;
+}
+
+.relist{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+

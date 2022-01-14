@@ -144,6 +144,9 @@
 	cursor: pointer;
 }
 
+
+
+/*-------------------댓글관련 css-----------------------*/
 /*세일즈 상세 페이지에 댓굴*/
 .detailsalesTbl
 #tbl_reply {
@@ -156,4 +159,40 @@
 textarea{
 	width: 730px;
 	height: 50px;
+}
+
+/*--??--*/
+#comText{
+    width: 650px;
+    height: 300px;
+    border : none;
+    resize: none;
+  }
+  
+#comText:focus{
+	outline : none;
+}
+
+#regInput{
+	width : 300px;
+}
+#regInput:focus{
+	outline : none;
+}
+/*댓글 리스트 테이블*/
+#replyList{
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	border-collapse: collapse;
+	background-color :  #e8e8e8;
+}
+
+#reCon{
+	border-top: 1px solid #adadad;
+}
+
+.relist{
+	padding-top:10px;
+	padding-bottom:10px;
 }

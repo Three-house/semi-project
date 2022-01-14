@@ -23,7 +23,7 @@
 	</tr>
 	<tr>
 		<td>&nbsp;&nbsp;PW</td>
-		<td><input name="pw" required="required"></td>
+		<td><input name="pw" type="password" required="required"></td>
 	</tr>
 	<tr>
 		<td colspan="2" style="color: white; height: 60px;">-----------</td>
