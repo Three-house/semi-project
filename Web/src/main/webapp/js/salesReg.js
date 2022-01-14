@@ -84,7 +84,7 @@ if(!lessThan(salesEtc,500)){
 	salesContact.value = "";
 	return false;
 }
-	
+	return true;
 	
 	
 	

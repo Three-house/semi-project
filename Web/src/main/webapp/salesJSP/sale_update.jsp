@@ -6,6 +6,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript">
+function salesCheck() {
+	let salesImg1 = document.getElementById('salesImg1');
+	let salesImg2 = document.getElementById('salesImg2');
+	let salesImg3 = document.getElementById('salesImg3');
+	
+	if(isEmpty(salesImg1)) {
+		alert('사진1 : 파일선택을 해주세요!')
+		return false;
+	}
+	if(isEmpty(salesImg2)) {
+		alert('사진2 : 파일선택을 해주세요!')
+		return false;
+	}
+	if(isEmpty(salesImg3)) {
+		alert('사진3 : 파일선택을 해주세요!')
+		return false;
+	}
+	return true;
+}
+</script>
 <body style="font-family: 'Gowun Dodum', sans-serif;">
 	<table class="regsalesTbl">
 		<tr>
@@ -23,8 +44,8 @@
 		</tr>
 		<tr>
 			<td>
-				<form action="SalesUpdateC" method="post"
-					enctype="multipart/form-data" onsubmit="return salesReg();">
+				<form action="SalesUpdateC?num=${sales.num}" method="post"
+					enctype="multipart/form-data" onsubmit="return salesCheck()">
 					<table border=1 id="tbl_salesReg">
 						<tr>
 						<tr>
@@ -77,20 +98,20 @@
 						</tr>
 						<tr>
 							<td id="regsalesTbl_td">사진1</td>
-							<td><img src="salesimg/${sales.img1}" width="200px"><br>
-								<input type="file" name="img1" id="salesImg1"></td>
+							<td><img src="sales_img/${sales.img1}" width="200px"><br>
+								<input type="file" name="img1" id="salesImg1" value="${img1}"></td>
 						</tr>
 						<tr>
 							<td id="regsalesTbl_td">사진2</td>
 
-							<td><img src="salesimg/${sales.img2}" width="200px"><br>
-								<input type="file" name="img2" id="salesImg2"></td>
+							<td><img src="sales_img/${sales.img2}" width="200px"><br>
+								<input type="file" name="img2" id="salesImg2" value="${img2}"></td>
 						</tr>
 						<tr>
 							<td id="regsalesTbl_td">사진3</td>
 
-							<td><img src="salesimg/${sales.img3}" width="200px"><br>
-								<input type="file" name="img3" id="salesImg3"></td>
+							<td><img src="sales_img/${sales.img3}" width="200px"><br>
+								<input type="file" name="img3" id="salesImg3" value="${img3}"></td>
 						</tr>
 						<tr>
 							<td id="regsalesTbl_td">연락처</td>

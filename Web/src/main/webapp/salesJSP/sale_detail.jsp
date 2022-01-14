@@ -49,13 +49,13 @@
 				</table>
 				<table id="tbl_detailsaleimg" style="text-align: center;">
 				<tr>
-				<td> <img src="sales_img/${sales.img1}">  </td>
+				<td> <img src="sales_img/${sales.img1}" width="300px;">  </td>
 				</tr>
 				<tr>
-				<td> <img src="salesimg/${sales.img2}">  </td>
+				<td> <img src="sales_img/${sales.img2}" width="300px;">  </td>
 				</tr>
 				<tr>
-				<td> <img src="salesimg/${sales.img3}">  </td>
+				<td> <img src="sales_img/${sales.img3}" width="300px;">  </td>
 				</tr>
 				</table>
 			</td>

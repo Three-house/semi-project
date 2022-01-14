@@ -145,7 +145,7 @@ public class SalesDAO {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "update sales set s_name=?,s_salesort=?,s_size=?,s_condition=?,s_location=?,s_address=?,s_price=?,"
+		String sql = "update sales set s_name=?,s_salesort=?,s_location=?,s_address=?,s_size=?,s_condition=?,s_price=?,"
 				+ "s_etc=?,s_img1=?,s_img2=?,s_img3=?,s_contact=? where s_no=?";
 		
 		try {
@@ -163,7 +163,7 @@ public class SalesDAO {
 			pstmt = con.prepareStatement(sql);
 			
 			System.out.println("--------매물 업뎃 값 확인---------");
-			System.out.println(mr.getParameter("no"));
+			System.out.println(mr.getParameter("num"));
 			System.out.println(mr.getParameter("buildingName"));
 			System.out.println(mr.getParameter("condition"));
 			System.out.println(mr.getParameter("salesort"));
@@ -178,28 +178,28 @@ public class SalesDAO {
 			System.out.println(mr.getParameter("contact"));
 			
 			pstmt.setString(1, mr.getParameter("buildingName"));
-			pstmt.setString(2, mr.getParameter("condition"));
-			pstmt.setString(3, mr.getParameter("salesort"));
-			pstmt.setString(4, mr.getParameter("location"));
-			pstmt.setString(5, mr.getParameter("address"));
-			pstmt.setString(6, mr.getParameter("price"));
-			pstmt.setString(7, mr.getParameter("size"));
+			pstmt.setString(2, mr.getParameter("salesort"));
+			pstmt.setString(3, mr.getParameter("location"));
+			pstmt.setString(4, mr.getParameter("address"));
+			pstmt.setString(5, mr.getParameter("size"));
+			pstmt.setString(6, mr.getParameter("condition"));
+			pstmt.setString(7, mr.getParameter("price"));
 			pstmt.setString(8, mr.getParameter("etc"));
 			pstmt.setString(9, file1);
 			pstmt.setString(10, file2);
 			pstmt.setString(11, file3);
 			pstmt.setString(12, mr.getParameter("contact"));
-			pstmt.setString(13, mr.getParameter("no"));
+			pstmt.setString(13, mr.getParameter("num"));
 			
 			
 			if (pstmt.executeUpdate() == 1) {
-				request.setAttribute("r", "수정 성공!");
+				System.out.println("수정성공!");
 				}else {		
-					request.setAttribute("r", "수정 실패!");
+				System.out.println("수정실패!");
 				}
 			
 		} catch (Exception e) {
-			request.setAttribute("r", "DB서버 오류!");
+			System.out.println("DB에러 ...");
 			e.printStackTrace();
 			
 		}finally {
