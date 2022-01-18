@@ -1,6 +1,7 @@
 # 🏡Every House
 <img src = "https://user-images.githubusercontent.com/84564138/149880235-c2850cd5-78a9-4bd2-8661-5f516a23da8d.png" width=50%>
-안녕하세요! 부동산웹사이트 Every House 입니다.(こんにちは、不動産屋ウェブサイトのEvery House でございます。) <p></p>
+안녕하세요! 부동산웹사이트 Every House 입니다. <br>
+こんにちは、不動産屋ウェブサイトのEvery House でございます。<p></p>
 
 ## 💡 What is Every House?
 
